@@ -81,7 +81,7 @@ app.use((req, res) => {
   try {
     await connectDB();
 
-    app.listen(PORT, () => {
+    app.listen(PORT, "0.0.0.0", () => {
       console.log(`[STARTUP] Server listening on port ${PORT}`);
       console.log("[STARTUP] Mounted routes: GET /, GET /api/health, /api/auth, /api/trips");
     });

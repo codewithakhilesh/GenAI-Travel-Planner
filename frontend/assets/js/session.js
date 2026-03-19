@@ -6,7 +6,7 @@
   var USER_KEY = "goyatra_user";
   var PENDING_TRIP_KEY = "goyatra_pending_trip";
   var LAST_PLAN_KEY = "goyatra_last_plan";
-  var API_BASE_URL = "http://localhost:5000";
+  var API_BASE_URL = "https://genai-travel-planner-wuk9.onrender.com";
   var FALLBACK_USER_IMAGE = "assets/GIF/profile.gif";
 
   function safeJsonParse(raw) {

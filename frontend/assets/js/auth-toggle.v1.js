@@ -1,7 +1,7 @@
 (function authToggleV1(global) {
   "use strict";
 
-  var API_BASE_URL = "http://localhost:5000";
+  var API_BASE_URL = "https://genai-travel-planner-wuk9.onrender.com";
   var isRegisterMode = false;
 
   function byId(id) {

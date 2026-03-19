@@ -3,7 +3,7 @@
   "use strict";
 
   var LAST_PLAN_KEY = "goyatra_last_plan";
-  var BASE = String(global.GOYATRA_API_BASE_URL || "http://localhost:5000").replace(/\/+$/, "");
+  var BASE = String(global.GOYATRA_API_BASE_URL || "https://genai-travel-planner-wuk9.onrender.com").replace(/\/+$/, "");
 
   function safeParse(raw) {
     try {
