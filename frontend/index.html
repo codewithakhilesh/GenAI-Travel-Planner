@@ -1,0 +1,682 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoYatra - Plan Your Perfect Indian Trip</title>
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body data-page="home">
+    <!-- ============================================
+       HEADER & NAVIGATION
+       ============================================ -->
+    <header id="siteHeader">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon">TRAVELING PLANNING PLATFORM</span>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="nav-toggle" id="navToggleBtn" type="button" aria-label="Menu" aria-expanded="false">
+                <img src="assets/icons/menu1.png" alt="menu" class="menu-icon">
+
+            </button>
+
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#bookingForm">Plan Trip</a></li>
+
+                    <li><a href="mytrips.html">My Trips</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+
+                    <li class="nav-user">
+                        <button class="user-btn" id="userMenuBtn" type="button" aria-expanded="false">
+                            <img src="assets/GIF/profile.gif" alt="User" class="user-icon">
+                            <span>User</span>
+                        </button>
+
+                        <div class="user-dropdown" id="userDropdown">
+                            <a href="user.html">LogOut</a>
+                            <!-- <button type="button" id="logoutBtn">Logout</button>
+                            <button type="button" id="deleteAccountBtn" style="display:none;">Delete Account</button> -->
+
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================
+       HERO SECTION
+       ============================================ -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="reveal" data-delay="0">
+                Explore India Your Way -
+                <span class="highlight-green">Your Journey Our Way</span>
+            </h1>
+
+            <p class="subtitle reveal" data-delay="180">
+                AI-powered travel planning for your perfect Indian adventure
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================================
+     BOOKING SEARCH SECTION (UPDATED STRUCTURE)
+     ============================================ -->
+    <section>
+        <div class="container">
+            <div class="search-box">
+                <h2>Plan Your Perfect Trip</h2>
+
+                <form id="bookingForm">
+                    <div class="search-form">
+
+                        <!-- From -->
+                        <div class="form-group from-box">
+                            <label for="from">From</label>
+                            <div class="field-big">
+                                <input type="text" id="from" placeholder="Nagpur (NGP)" required>
+                            </div>
+                        </div>
+
+                        <!-- Swap icon (only UI) -->
+                        <div class="swap-box" aria-hidden="true">
+                            <span class="swap-icon">⇄</span>
+                        </div>
+
+                        <!-- To -->
+                        <div class="form-group to-box">
+                            <label for="to">To</label>
+                            <div class="field-big">
+                                <input type="text" id="to" placeholder="e.g., Goa, Kerala, Rajasthan" required>
+                            </div>
+                        </div>
+
+                        <!-- Start Date -->
+                        <div class="form-group start-box">
+                            <label for="startDate">Start Date</label>
+                            <div class="field-big">
+                                <input type="date" id="startDate" required>
+                            </div>
+                            <small class="hint">dd-mm-yyyy</small>
+                        </div>
+
+                        <!-- End Date -->
+                        <div class="form-group end-box">
+                            <label for="endDate">End Date</label>
+                            <div class="field-big">
+                                <input type="date" id="endDate" required>
+                            </div>
+                            <small class="hint">dd-mm-yyyy</small>
+                        </div>
+                        <!-- Number of People -->
+                        <div class="form-group people-box custom-select" id="peopleSelect">
+                            <label>No of People</label>
+
+                            <div class="select-head">
+                                <span id="peopleValue">Select</span>
+                            </div>
+
+                            <div class="select-dropdown">
+                                <div class="select-item" data-value="1">
+                                    <img src="assets/icons/people.png" alt="">
+                                    <span>1 Person</span>
+                                </div>
+                                <div class="select-item" data-value="2">
+                                    <img src="assets/icons/people.png" alt="">
+                                    <span>2 People</span>
+                                </div>
+                                <div class="select-item" data-value="3">
+                                    <img src="assets/icons/people.png" alt="">
+                                    <span>3 People</span>
+                                </div>
+                                <div class="select-item" data-value="4">
+                                    <img src="assets/icons/people.png" alt="">
+                                    <span>4 People</span>
+                                </div>
+                                <div class="select-item" data-value="5">
+                                    <img src="assets/icons/people.png" alt="">
+                                    <span>5+ People</span>
+                                </div>
+                            </div>
+
+                            <!-- hidden input (same id = old code compatible) -->
+                            <input type="hidden" id="people" required>
+                        </div>
+
+
+                        <!-- Travel Type -->
+                        <div class="form-group travel-box custom-select" id="travelTypeSelect">
+                            <label>Travel Type</label>
+
+                            <div class="select-head">
+                                <span id="travelTypeValue">Select</span>
+                            </div>
+
+                            <div class="select-dropdown">
+                                <div class="select-item" data-value="Solo">
+                                    <img src="assets/icons/solo.png" alt="">
+                                    <span>Solo</span>
+                                </div>
+                                <div class="select-item" data-value="Couple">
+                                    <img src="assets/icons/couple.png" alt="">
+                                    <span>Couple</span>
+                                </div>
+                                <div class="select-item" data-value="Friends">
+                                    <img src="assets/icons/friend.png" alt="">
+                                    <span>Friends</span>
+                                </div>
+                                <div class="select-item" data-value="Family">
+                                    <img src="assets/icons/family.png" alt="">
+                                    <span>Family</span>
+                                </div>
+                            </div>
+
+                            <input type="hidden" id="travelType" required>
+                        </div>
+
+
+                        <!-- Transport Mode -->
+                        <div class="form-group transport-box custom-select" id="transportSelect">
+                            <label>Transport</label>
+
+                            <div class="select-head">
+                                <span id="transportValue">Select</span>
+                            </div>
+
+                            <div class="select-dropdown">
+                                <div class="select-item" data-value="Flight">
+                                    <img src="assets/icons/flight.png" alt="">
+                                    <span>Flight</span>
+                                </div>
+                                <div class="select-item" data-value="Train">
+                                    <img src="assets/icons/train.png" alt="">
+                                    <span>Train</span>
+                                </div>
+                                <div class="select-item" data-value="Car">
+                                    <img src="assets/icons/car.png" alt="">
+                                    <span>Car</span>
+                                </div>
+                                <div class="select-item" data-value="Bike">
+                                    <img src="assets/icons/bike.png" alt="">
+                                    <span>Bike</span>
+                                </div>
+                            </div>
+
+                            <input type="hidden" id="transport" required>
+                        </div>
+
+                        <!-- Budget -->
+                        <div class="form-group budget-box">
+                            <label for="budget">Total Budget (?)</label>
+                            <div class="field-big">
+                                <input type="number" id="budget" placeholder="e.g., 50000" required>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="search-actions">
+                        <button type="reset" id="clearSearch" class="btn btn-secondary">Clear</button>
+                        <button id="planMyTripBtn" type="submit" class="btn btn-primary btn-lg">Plan My Trip</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- ============================================
+      National Popular Destinations Section
+       ============================================ -->
+    <section class="popular-banner">
+        <div class="banner-wrapper">
+
+            <!-- SLIDER -->
+            <div class="banner-slider">
+                <div class="banner-slides">
+
+                    <div class="slide">
+                        <img src="assets\images\goa.jpg" alt="Goa">
+                        <h2 class="slide-title">GOA</h2>
+                    </div>
+
+                    <div class="slide">
+                        <img src="assets\images\manali.jpg" alt="Manali">
+                        <h2 class="slide-title">MANALI</h2>
+                    </div>
+
+                    <div class="slide">
+                        <img src="assets\images\kashmir.jpg" alt="Kashmir">
+                        <h2 class="slide-title">KASHMIR</h2>
+                    </div>
+
+                    <div class="slide">
+                        <img src="assets\images\kerla.jpg" alt="Kerala">
+                        <h2 class="slide-title">KERALA</h2>
+                    </div>
+
+                    <div class="slide">
+                        <img src="assets\images\leh.jpg" alt="Leh">
+                        <h2 class="slide-title">LEH</h2>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <!-- RIGHT TEXT -->
+
+            <div class="banner-text">
+                <h2 class="banner-heading reveal" data-effect="heading" data-delay="0">
+                    Discover India’s <span>most loved</span><br />
+                    national destinations
+                </h2>
+
+                <p class="banner-subtitle reveal" data-effect="soft" data-delay="180">
+                    From beaches and hill stations to deserts and heritage cities,
+                    explore handpicked destinations curated for you.
+                </p>
+                <a href="destinations.html">
+                    <button class="view-btn reveal" data-effect="soft" data-delay="260">
+                        View All Destinations
+                    </button>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================ 
+       International Destinations Section
+      ============================================  -->
+
+    <section class="international-section">
+        <div class="international-container">
+
+            <!-- LEFT CONTENT -->
+            <div class="international-text">
+
+                <h2 class="reveal" data-effect="heading" data-delay="0">
+                    Discover the world’s <span>most loved</span><br />
+                    international destinations
+                </h2>
+
+                <p class="reveal" data-effect="soft" data-delay="180">
+                    From romantic cities to breathtaking landscapes,
+                    explore handpicked global destinations curated for you.
+                </p>
+
+
+            </div>
+
+            <!-- RIGHT STACK (5 images) -->
+            <div class="international-stack" id="internationalStack">
+
+                <button class="stack-close" type="button" id="stackNextBtn" aria-label="Next image">×</button>
+                <div class="stack-photo s5"><img src="assets/images/International/5.jpg" alt=""></div>
+                <div class="stack-photo s4"><img src="assets/images/International/4.jpeg" alt=""></div>
+                <div class="stack-photo s3"><img src="assets/images/International/3.jpg" alt=""></div>
+                <div class="stack-photo s2"><img src="assets/images/International/2.jpg" alt=""></div>
+                <div class="stack-photo s1"><img src="assets/images/International/1.jpg" alt=""></div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- ============================================ 
+       Member benefits section
+      ============================================  -->
+
+    <section class="goyatra-benefits" id="memberBenefits">
+        <div class="benefits-wrap">
+            <h2 class="benefits-title reveal" data-effect="heading" data-delay="0">
+                Member benefits
+            </h2>
+
+            <div class="benefits-underline"></div>
+
+            <div class="benefits-grid">
+                <!-- 1 -->
+                <article class="benefit-card">
+                    <div class="benefit-icon" aria-hidden="true">
+                        <!-- AI planner -->
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <path d="M22 18h20v28H22z" stroke="currentColor" stroke-width="2.2"
+                                stroke-linejoin="round" />
+                            <path d="M26 24h12M26 30h12M26 36h8" stroke="currentColor" stroke-width="2.2"
+                                stroke-linecap="round" />
+                            <path d="M30 14h4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3 class="benefit-head">AI TRIP PLANNER</h3>
+                    <p class="benefit-text">Instant itineraries tailored to your dates, budget, travel style, and
+                        transport preference.</p>
+                </article>
+
+                <!-- 2 -->
+                <article class="benefit-card">
+                    <div class="benefit-icon" aria-hidden="true">
+                        <!-- map -->
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <path d="M22 48V18l10-4 10 4 10-4v30l-10 4-10-4-10 4Z" stroke="currentColor"
+                                stroke-width="2.2" stroke-linejoin="round" />
+                            <path d="M32 14v30M42 18v30" stroke="currentColor" stroke-width="2.2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3 class="benefit-head">SMART DESTINATIONS</h3>
+                    <p class="benefit-text">Handpicked places across India with best-time to visit, must-see spots, and
+                        local highlights.</p>
+                </article>
+
+                <!-- 3 -->
+                <article class="benefit-card">
+                    <div class="benefit-icon" aria-hidden="true">
+                        <!-- events / deals -->
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <path d="M18 22h28v24H18z" stroke="currentColor" stroke-width="2.2"
+                                stroke-linejoin="round" />
+                            <path d="M22 18v8M42 18v8" stroke="currentColor" stroke-width="2.2"
+                                stroke-linecap="round" />
+                            <path d="M22 32h20" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3 class="benefit-head">BEST STAYS & DEALS</h3>
+                    <p class="benefit-text">Recommended hotels and budget-friendly options near your destinations—easy
+                        to compare and pick.</p>
+                </article>
+
+                <!-- 4 -->
+                <article class="benefit-card">
+                    <div class="benefit-icon" aria-hidden="true">
+                        <!-- inspiration -->
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <path
+                                d="M32 14c6.6 0 12 5.4 12 12 0 4.2-2.2 7.8-5.4 10v6H25.4v-6C22.2 33.8 20 30.2 20 26c0-6.6 5.4-12 12-12Z"
+                                stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" />
+                            <path d="M26 54h12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3 class="benefit-head">DAILY TRAVEL INSPIRATION</h3>
+                    <p class="benefit-text">Discover new routes and themes—beaches, hills, temples, city breaks, and
+                        weekend getaways.</p>
+                </article>
+
+                <!-- 5 -->
+                <article class="benefit-card">
+                    <div class="benefit-icon" aria-hidden="true">
+                        <!-- budget -->
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <path d="M20 22h24v20H20z" stroke="currentColor" stroke-width="2.2"
+                                stroke-linejoin="round" />
+                            <path d="M44 26h4a4 4 0 0 1 0 12h-4" stroke="currentColor" stroke-width="2.2"
+                                stroke-linecap="round" />
+                            <path d="M26 32h12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3 class="benefit-head">BUDGET ESTIMATOR</h3>
+                    <p class="benefit-text">Get a practical cost breakdown for travel, stay, and activities—perfect for
+                        student-friendly plans.</p>
+                </article>
+
+                <!-- 6 -->
+                <article class="benefit-card">
+                    <div class="benefit-icon" aria-hidden="true">
+                        <!-- chatbot -->
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <path
+                                d="M18 22c0-4.4 3.6-8 8-8h12c4.4 0 8 3.6 8 8v10c0 4.4-3.6 8-8 8H28l-8 6v-6c-1.2-.9-2-2.4-2-4V22Z"
+                                stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" />
+                            <path d="M26 30h.01M32 30h.01M38 30h.01" stroke="currentColor" stroke-width="3.2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3 class="benefit-head">24/7 AI ASSISTANT</h3>
+                    <p class="benefit-text">Ask about places, routes, best seasons, packing tips, and plan edits—right
+                        inside GoYatra.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================ 
+       “Daily travel inspiration” section
+      ============================================  -->
+    <section class="inspire-section" id="dailyInspiration">
+        <div class="inspire-wrap">
+            <h2 class="inspire-title reveal" data-effect="heading" data-delay="0">Daily travel inspiration</h2>
+            <div class="inspire-title-line"></div>
+
+            <div class="inspire-grid">
+                <!-- 1 -->
+                <article class="inspire-card">
+                    <div class="inspire-img">
+                        <img src="assets/images/inspire-1.jpg" alt="Weekend escapes near Nagpur">
+                    </div>
+                    <h3 class="inspire-head">Weekend Escapes from Nagpur</h3>
+                    <div class="inspire-underline"></div>
+                    <p class="inspire-text">AI picks the best 2-day trips with budget, transport, and must-visit places.
+                    </p>
+                </article>
+
+                <!-- 2 -->
+                <article class="inspire-card">
+                    <div class="inspire-img">
+                        <img src="assets/images/inspire-2.jpg" alt="Monsoon hill stations itinerary">
+                    </div>
+                    <h3 class="inspire-head">Monsoon Hill-Station Trails</h3>
+                    <div class="inspire-underline"></div>
+                    <p class="inspire-text">Personalized rainy-season itineraries with safe routes and viewpoint stops.
+                    </p>
+                </article>
+
+                <!-- 3 -->
+                <article class="inspire-card">
+                    <div class="inspire-img">
+                        <img src="assets/images/inspire-3.jpg" alt="Romantic getaways in India">
+                    </div>
+                    <h3 class="inspire-head">Romantic Getaways in India</h3>
+                    <div class="inspire-underline"></div>
+                    <p class="inspire-text">Couple-friendly stays, cafés, and sunset points—generated by GoYatra AI.</p>
+                </article>
+
+                <!-- 4 -->
+                <article class="inspire-card">
+                    <div class="inspire-img">
+                        <img src="assets/images/inspire-4.jpg" alt="Budget trips for students">
+                    </div>
+                    <h3 class="inspire-head">Student Budget Trip Hacks</h3>
+                    <div class="inspire-underline"></div>
+                    <p class="inspire-text">Smart budget breakdown + cheapest transport suggestions based on your dates.
+                    </p>
+                </article>
+
+                <!-- 5 -->
+                <article class="inspire-card">
+                    <div class="inspire-img">
+                        <img src="assets/images/inspire-5.jpeg" alt="Heritage circuits and temples">
+                    </div>
+                    <h3 class="inspire-head">Heritage & Temple Circuits</h3>
+                    <div class="inspire-underline"></div>
+                    <p class="inspire-text">Plan a cultural route with timings, nearby attractions, and local food
+                        stops.</p>
+                </article>
+
+                <!-- 6 -->
+                <article class="inspire-card">
+                    <div class="inspire-img">
+                        <img src="assets/images/inspire-6.jpeg" alt="Beach and coastal plans">
+                    </div>
+                    <h3 class="inspire-head">Coastal Chill:Beaches Cafés</h3>
+                    <div class="inspire-underline"></div>
+                    <p class="inspire-text">GoYatra suggests beaches, cafes, and best-time visits—plus hotel picks.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ============================================
+       FOOTER
+       ============================================ -->
+
+    <footer class="main-footer">
+        <div class="footer-container">
+
+            <!-- Brand -->
+            <div class="footer-box">
+                <h2>GoYatra AI</h2>
+                <p>
+                    GenAI powered travel planning platform helping users
+                    plan smart, budget-friendly & personalized trips.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#bookingForm">Plan Trip</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="mytrips.html">My Trips</a></li>
+                    <li><a href="about.html">Project About </a></li>
+                </ul>
+            </div>
+
+            <!-- Features -->
+            <div class="footer-box">
+                <h3>Features</h3>
+                <ul>
+                    <li>AI Trip Planner</li>
+                    <li>Budget Estimator</li>
+                    <li>Smart Suggestions</li>
+
+                </ul>
+
+
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-box">
+                <h3>Contact</h3>
+                <p>India</p>
+                <p>support@goyatra.ai</p>
+                <p>+91 XXXXXXXX</p>
+
+                <div class="social-icons">
+                    <a href="#"><img src="assets/icons/mail.png" alt="Gmail"></a>
+                    <a href="#"><img src="assets/icons/x.png" alt="twitter"></a>
+                    <a href="#"><img src="assets/icons/whatsapp.png" alt="whatsapp"></a>
+                    <a href="#"><img src="assets/icons/instagram.png" alt="insta"></a>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            TRAVELING PLANNING PLATFORM | Final Year Project | Mr. Akhilesh Bhagat | Mr. Sarvesh Tak | Mr. Ghanshyam
+            Lihankar
+        </div>
+    </footer>
+
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/session.js"></script>
+    <script src="assets/js/travel-plan-generator.js"></script>
+    <script src="assets/js/plantrip.js"></script>
+    <script src="assets/js/trip-save.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/index.js"></script>
+
+
+    <script>
+  // Booking page handler snippet (paste in index page JS, after travel-plan-generator.js is loaded)
+  document.addEventListener("DOMContentLoaded", function () {
+    var planner = window.GOYATRA_PLAN_GENERATOR;
+    var form = document.getElementById("bookingForm");
+    var planBtn = document.getElementById("planMyTripBtn");
+
+    if (!planner || !form) return;
+
+    var fromInput = document.getElementById("from");
+    if (fromInput) {
+      fromInput.value = planner.FIXED_FROM;
+      fromInput.readOnly = true;
+    }
+
+    var isSubmitting = false;
+
+    function collectTripInput() {
+      var transportField =
+        document.getElementById("transportMode") ||
+        document.getElementById("transport");
+
+      return {
+        from: fromInput ? fromInput.value : planner.FIXED_FROM,
+        to: (document.getElementById("to") || {}).value || "",
+        startDate: (document.getElementById("startDate") || {}).value || "",
+        endDate: (document.getElementById("endDate") || {}).value || "",
+        people: (document.getElementById("people") || {}).value || "1",
+        travelType: (document.getElementById("travelType") || {}).value || "",
+        transportMode: transportField ? transportField.value : "",
+        budget: (document.getElementById("budget") || {}).value || 0
+      };
+    }
+
+    function handlePlanTrip(event) {
+      if (event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+      }
+
+      if (isSubmitting) return;
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      isSubmitting = true;
+
+      try {
+        var plan = planner.generateCompleteTravelPlan(collectTripInput());
+        localStorage.setItem("goyatra_last_plan", JSON.stringify(plan));
+        window.location.href = "plantrip.html";
+      } catch (error) {
+        alert(error && error.message ? error.message : "Unable to generate trip plan.");
+        isSubmitting = false;
+      }
+    }
+
+    form.addEventListener("submit", handlePlanTrip, true);
+
+    if (planBtn) {
+      planBtn.addEventListener("click", handlePlanTrip, true);
+    }
+  });
+</script>
+
+
+
+
+</body>
+
+</html>

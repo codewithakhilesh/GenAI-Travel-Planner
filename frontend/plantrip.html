@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trip-Planner.com</title>
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+</head>
+
+<body data-page="trip-planner">
+
+  <!-- ============================================
+       HEADER & NAVIGATION
+       ============================================ -->
+    <header id="siteHeader">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon">TRAVELING PLANNING PLATFORM</span>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="nav-toggle" id="navToggleBtn" type="button" aria-label="Menu" aria-expanded="false">
+                <img src="assets/icons/menu1.png" alt="menu" class="menu-icon">
+
+            </button>
+
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#bookingForm">Plan Trip</a></li>
+
+                    <li><a href="mytrips.html">My Trips</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+
+                    <li class="nav-user">
+                        <button class="user-btn" id="userMenuBtn" type="button" aria-expanded="false">
+                            <img src="assets/GIF/profile.gif" alt="User" class="user-icon">
+                            <span>User</span>
+                        </button>
+
+                        <div class="user-dropdown" id="userDropdown">
+                            <a href="user.html">Profile</a>
+                            <button type="button" id="logoutBtn">Logout</button>
+                            <button type="button" id="deleteAccountBtn" style="display:none;">Delete Account</button>
+
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+  <!-- ============================================
+       HERO SECTION
+       ============================================ -->
+  <section class="hero">
+    <div class="container">
+      <h1>
+        Explore India Your Way -
+        <span class="highlight-green"> Your Journey Our Way</span>
+      </h1>
+      <p>AI-powered travel planning for your perfect Indian adventure</p>
+    </div>
+  </section>
+
+  <!-- ============================================
+   TRIP PLAN LAYOUT (Image fixed + Details scroll)
+   ============================================ -->
+  <section id="tripResults" class="trip-page" style="display:none;">
+    <div class="container">
+
+      <div class="trip-split">
+        <!-- LEFT: Fixed image -->
+        <div class="trip-left">
+          <img id="destinationImage" src="assets/images/goa1.jpg" alt="Destination" />
+        </div>
+
+        <!-- RIGHT: Scrollable details -->
+        <div class="trip-right">
+          <h2 class="trip-heading">Your Trip Plan</h2>
+
+          <div class="trip-details-scroll" id="tripDetailsScroll">
+            <div class="tp-block">
+              <h3>Your Trip</h3>
+              <div id="tripSummary"></div>
+            </div>
+
+            <div class="tp-block">
+              <h3>Budget Breakdown</h3>
+              <div id="budgetBreakdown"></div>
+            </div>
+
+            <div class="tp-block">
+              <h3>Top Visiting Places</h3>
+              <div id="topPlaces"></div>
+            </div>
+
+            <div class="tp-block">
+              <h3>Day-by-Day Itinerary</h3>
+              <div id="itinerary"></div>
+            </div>
+
+            <div class="tp-block">
+              <h3>Best Time to Visit</h3>
+              <div id="bestTime"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Download + New Trip buttons center -->
+
+
+<div class="download-wrap">
+
+  <button id="downloadPlanBtn" class="btn btn-primary btn-lg">
+    Download Plan (PDF)
+    <!-- <img src="assets/GIF/pdf.gif" class="btn-icon gif-icon" alt="" > -->
+  </button>
+
+  <button id="saveTripBtn" class="btn btn-outline btn-lg">
+    Save Trips
+    <!-- <img src="assets/GIF/save.gif" class="btn-icon gif-icon" alt=""> -->
+  </button>
+
+  <button id="newTripBtn" class="btn btn-outline btn-lg">
+    Plan New Trip
+    <!-- <img src="assets/GIF/plannewtrip.gif" class="btn-icon gif-icon" alt=""> -->
+  </button>
+
+</div>
+
+
+
+      <!-- ===============================================
+     Famous Visiting Places ( Section)
+      ===========================================-->
+
+      <section class="hotel-section">
+  <div class="hotel-head">
+    <h2>Famous Visiting Places</h2>
+    <p>Top spots you shouldn’t miss</p>
+  </div>
+
+  <div class="hotel-carousel" id="placeCarousel">
+    <button class="hotel-nav hotel-prev" id="placePrev" aria-label="Previous">
+  <img src="assets/icons/left1.png" class="arrow-gif" alt="">
+</button>
+
+    <div class="hotel-viewport">
+      <div class="hotel-track" id="placeTrack"></div>
+    </div>
+<button class="hotel-nav hotel-next" id="placeNext" aria-label="Next">
+  <img src="assets/icons/right1.png" class="arrow-gif" alt="">
+</button>
+    
+  </div>
+</section>
+
+
+
+
+      <!-- =============================================== 
+       Recommended Hotels Carousel 
+      ===================================================-->
+  
+<section class="hotel-section">
+  <div class="hotel-head">
+    <h2>Recommended Hotels</h2>
+    <p>Best Stays</p>
+  </div>
+
+  <div class="hotel-carousel" id="hotelCarousel">
+    <button class="hotel-nav hotel-prev" id="hotelPrev" aria-label="Previous">
+      <img src="assets/icons/left1.png" class="arrow-gif" alt="">
+    </button>
+
+    <div class="hotel-viewport">
+      <div class="hotel-track" id="hotelTrack">
+
+      </div>
+    </div>
+
+    <button class="hotel-nav hotel-next" id="hotelNext" aria-label="Next">
+      <img src="assets/icons/right1.png" class="arrow-gif" alt="">
+    </button>
+  </div>
+</section>
+
+      
+      <!-- ============================================
+       FOOTER
+       ============================================ -->
+
+<footer class="main-footer">
+        <div class="footer-container">
+
+            <!-- Brand -->
+            <div class="footer-box">
+                <h2>GoYatra AI</h2>
+                <p>
+                    GenAI powered travel planning platform helping users
+                    plan smart, budget-friendly & personalized trips.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#bookingForm">Plan Trip</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="mytrips.html">My Trips</a></li>
+                </ul>
+            </div>
+
+            <!-- Features -->
+            <div class="footer-box">
+                <h3>Features</h3>
+                <ul>
+                    <li>AI Trip Planner</li>
+                    <li>Budget Estimator</li>
+                    <li>Smart Suggestions</li>
+
+                </ul>
+
+
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-box">
+                <h3>Contact</h3>
+                <p>India</p>
+                <p>support@goyatra.ai</p>
+                <p>+91 XXXXXXXX</p>
+
+                <div class="social-icons">
+                    <a href="#"><img src="assets/icons/mail.png" alt="Gmail"></a>
+                    <a href="#"><img src="assets/icons/x.png" alt="twitter"></a>
+                    <a href="#"><img src="assets/icons/whatsapp.png" alt="whatsapp"></a>
+                    <a href="#"><img src="assets/icons/instagram.png" alt="insta"></a>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            TRAVELING PLANNING PLATFORM | Final Year Project | Mr. Akhilesh Bhagat | Mr. Sarvesh Tak | Mr. Ghanshyam
+            Lihankar
+        </div>
+    </footer>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+ 
+<script src="assets/js/api.js"></script>
+<script src="assets/js/session.js"></script>
+<script src="assets/js/travel-plan-generator.js"></script>
+<script src="assets/js/plantrip.js"></script>
+<script src="assets/js/trips-save.js"></script>
+   <script src="assets/js/index.js"></script>
+
+
+
+</body>
+
+</html>
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoYatra - Login</title>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/auth.css" />
+</head>
+
+<body data-page="auth">
+  <main class="auth-shell">
+    <section class="welcome-section">
+
+      <h1>Welcome to GoYatra</h1>
+      <p>
+        Sign in to generate personalized plans, save trips, and continue your journey without losing progress.
+      </p>
+      <p>
+        Use your mobile number and password. Your pending trip form data is automatically resumed after login.
+      </p>
+    </section>
+
+    <section class="login-section">
+      <div class="login-card">
+        <h2 id="authTitle">Sign In</h2>
+        <p class="sub-text" id="authSubtitle">Continue with your mobile number.</p>
+
+        <div id="authMessage" class="status-message" aria-live="polite"></div>
+
+        <form id="authForm" class="auth-form" novalidate>
+
+          <!-- FIRST NAME (REGISTER ONLY) -->
+          <div class="form-group hidden" id="firstNameGroup">
+            <label for="firstNameInput">First Name</label>
+            <input id="firstNameInput" type="text" placeholder="Enter your first name" autocomplete="given-name" />
+          </div>
+
+          <!--  LAST NAME (REGISTER ONLY) -->
+          <div class="form-group hidden" id="lastNameGroup">
+            <label for="lastNameInput">Last Name</label>
+            <input id="lastNameInput" type="text" placeholder="Enter your last name" autocomplete="family-name" />
+          </div>
+
+          <!-- PHONE -->
+          <div class="form-group">
+            <label for="phoneInput">Mobile Number</label>
+            <input id="phoneInput" type="tel" inputmode="numeric" placeholder="+919876543210" autocomplete="tel"
+              required />
+          </div>
+
+          <!-- PASSWORD -->
+          <div class="form-group">
+            <label for="passwordInput">Password</label>
+            <div class="password-wrap">
+              <input id="passwordInput" type="password" placeholder="Enter your password"
+                autocomplete="current-password" required />
+              <button type="button" id="togglePasswordBtn" class="eye-toggle">Show</button>
+            </div>
+          </div>
+
+          <button id="authSubmitBtn" type="submit" class="auth-btn">Login</button>
+        </form>
+
+        <div class="auth-switch">
+          <span id="authSwitchPrefix">Create New Account ?</span>
+          <button type="button" id="authModeToggleBtn">Create Account</button>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+    </main>
+
+  <script src="assets/js/session.js"></script>
+  <script src="assets/js/auth-toggle.v1.js"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,3748 @@
+/* ============================================
+
+   GoYatra - Modern Travel Planning Website
+  
+   ============================================ */
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+
+
+:root {
+  /* Color Palette - IndiGo Inspired */
+  --primary-blue: #0066cc;
+  --primary-blue-dark: #004499;
+  --secondary-white: #ffffff;
+  --accent-light-blue: #e8f1ff;
+  --accent-grey: #f5f5f5;
+  --text-dark: #1a1a1a;
+  --text-light: #666666;
+  --border-color: #e0e0e0;
+  --success-green: #4caf50;
+  --warning-orange: #ff9800;
+  --error-red: #f44336;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  /* Typography */
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.5rem;
+
+  /* Shadow */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+}
+
+/* ============================================
+   Reset & Base Styles
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+  background-color: var(--secondary-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   Typography
+   ============================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+h1 {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-md);
+}
+
+h2 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--spacing-lg);
+}
+
+h3 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-md);
+}
+
+h4 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-sm);
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-light);
+}
+
+a {
+  color: var(--primary-blue);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: goldenrod;
+}
+
+
+
+/* ============================================
+   Header & Navigation
+   ============================================ */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 70px;
+
+  /* default slightly transparent */
+  background: rgba(255, 255, 255, 0.75);
+
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  backdrop-filter: blur(10px) saturate(140%);
+
+  transition: all 0.25s ease;
+}
+
+/* Scroll → stronger blur */
+header.scrolled {
+  background: rgba(255, 255, 255, 0.55);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  backdrop-filter: blur(14px) saturate(160%);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+
+
+
+header.scrolled .header-container {
+  background: transparent !important;
+}
+
+.header-container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 24px;
+  padding-left: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  line-height: 1;
+}
+
+.logo-icon {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 500;
+  white-space: nowrap;
+  color: #21343b;
+}
+
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-xl);
+}
+
+nav a {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+header nav a {
+  color: #0a0a0a;
+}
+
+header nav a:hover {
+  color: #0ecbff;
+}
+
+
+
+/* ================================
+   User Icon Navbar (Button Version)
+   ================================ */
+
+/*  USER NAME FONT (navbar) */
+.user-btn span {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+
+.nav-user .user-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-user .user-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: 0 0 32px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* underline hover remove */
+.nav-user .user-btn::after {
+  display: none;
+}
+
+/* hover feel */
+.nav-user .user-btn:hover {
+  background: rgba(0, 240, 255, 0.10);
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dropdown-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+
+
+
+/* ================================
+   User Dropdown Menu (Navbar)
+   ================================ */
+
+.nav-user {
+  position: relative;
+
+  --ui-bg: rgba(255, 255, 255, 0.82);
+  --ui-border: rgba(15, 23, 42, 0.10);
+  --ui-shadow: 0 18px 45px rgba(2, 6, 23, 0.18);
+  --ui-radius: 16px;
+  --ui-radius-pill: 999px;
+
+  --ui-text: #0f172a;
+  --ui-hover: rgba(56, 189, 248, 0.12);
+  --ui-active: rgba(56, 189, 248, 0.20);
+  --ui-focus: rgba(59, 130, 246, 0.35);
+}
+
+/* underline hover remove (only inside user menu) */
+.nav-user a::after {
+  display: none !important;
+}
+
+/* Button (avatar + name) */
+.user-btn,
+.user-menu-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: var(--ui-radius-pill);
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid var(--ui-border);
+  box-shadow: 0 8px 22px rgba(2, 6, 23, 0.08);
+  color: var(--ui-text);
+  cursor: pointer;
+  transition: transform .12s ease, background .2s ease, box-shadow .2s ease, border-color .2s ease;
+  font: inherit;
+ 
+}
+
+.user-btn:hover,
+.user-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.90);
+  border-color: rgba(56, 189, 248, 0.30);
+  box-shadow: 0 12px 28px rgba(2, 6, 23, 0.12);
+  transform: translateY(-1px);
+   
+}
+
+.user-btn:active,
+.user-menu-btn:active {
+  transform: translateY(0);
+  background: rgba(255, 255, 255, 0.85);
+  
+}
+
+.user-btn:focus-visible,
+.user-menu-btn:focus-visible {
+  outline: 3px solid var(--ui-focus);
+  outline-offset: 2px;
+}
+
+/* Avatar */
+.user-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: 0 0 34px;
+  box-shadow: 0 10px 20px rgba(2, 6, 23, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+}
+
+/* Dropdown */
+
+.user-dropdown{
+  position:absolute;
+  right:0;
+  top: calc(100% + 10px);
+  width:220px;
+  padding:8px;
+
+  background: rgba(255,255,255,0.82);
+  border: 1px solid rgba(15,23,42,0.10);
+  border-radius:16px;
+  box-shadow: 0 18px 45px rgba(2,6,23,0.18);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  /* ✅ hide using visibility (NOT display) */
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transform: translateY(-6px) scale(0.98);
+  transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+
+  z-index: 99999;
+
+}
+
+.user-dropdown.active {
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transform: translateY(0) scale(1);
+  
+}
+
+/* Items */
+.user-dropdown a,
+.user-dropdown button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  text-align: left;
+
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12.5px;
+  font-weight: 500;
+
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  color: var(--ui-text);
+
+  transition: background .15s ease, border-color .15s ease, transform .12s ease;
+}
+
+.user-dropdown a:hover,
+.user-dropdown button:hover {
+  background: var(--ui-hover);
+  border-color: rgba(56, 189, 248, 0.20);
+  transform: translateY(-1px);
+   color: #f90707;
+}
+
+.user-dropdown a:active,
+.user-dropdown button:active {
+  transform: translateY(0);
+  background: var(--ui-active);
+}
+
+.user-dropdown a:focus-visible,
+.user-dropdown button:focus-visible {
+  outline: 3px solid var(--ui-focus);
+  outline-offset: 2px;
+}
+
+/* Icon inside dropdown */
+.user-dropdown .dropdown-icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  object-fit: contain;
+  opacity: 0.95;
+}
+
+/* Danger action */
+.user-dropdown #deleteAccountBtn {
+  color: #b91c1c;
+}
+
+.user-dropdown #deleteAccountBtn:hover {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.18);
+}
+
+
+
+/* ===========================
+   FORCE NAV CLICKABLE (FIX)
+   paste at VERY END of CSS
+=========================== */
+
+/* header + nav always above page layers */
+#siteHeader { position: sticky !important; z-index: 999999 !important; }
+#siteHeader * { pointer-events: auto; }
+
+/* force user button clickable */
+.nav-user { position: relative !important; z-index: 9999999 !important; }
+#userMenuBtn { position: relative !important; z-index: 99999999 !important; pointer-events: auto !important; }
+
+/* IMPORTANT: click should hit button even if you click on img/span */
+#userMenuBtn img, #userMenuBtn span { pointer-events: none !important; }
+
+/* ===========================
+   FORCE DROPDOWN SHOW (FIX)
+=========================== */
+#userDropdown{
+  position: absolute !important;
+  right: 0 !important;
+  top: calc(100% + 10px) !important;
+  width: 220px !important;
+
+  /* remove all conflicts */
+  display: none !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: none !important;
+
+  z-index: 99999999 !important;
+}
+#userDropdown.active{
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+
+
+/* ==========================
+   Mobile Menu Toggle Button
+   ========================== */
+
+.nav-toggle{
+  display:none; 
+  width:44px;
+  height:40px;
+  border-radius:14px;
+  padding:8px 10px;
+  cursor:pointer;
+
+  background: transparent;   /*trasparent */
+  border: none;             
+
+  box-shadow: none;   
+
+  transition: transform .2s ease;
+}
+
+.nav-toggle:hover{
+  transform: scale(1.08);    /* small smooth zoom */
+}
+
+/* show on mobile */
+@media (max-width: 768px){
+  .nav-toggle{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+  }
+}
+
+
+.menu-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+}
+
+.nav-toggle span {
+  display: none !important;
+}
+
+header.menu-open .nav-toggle span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+header.menu-open .nav-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+header.menu-open .nav-toggle span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+header,
+.header-container,
+header nav,
+header nav ul,
+header nav li {
+  overflow: visible !important;
+}
+
+/* dropdown must be above everything */
+.nav-user {
+  position: relative !important;
+}
+
+/* ===== HARD FIX: active state must win ===== */
+.user-dropdown {
+  display: none !important;
+}
+
+.user-dropdown.active {
+  display: flex !important;
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+  pointer-events: auto !important;
+  z-index: 99999 !important;
+}
+
+
+/* ==========================
+   Responsive Navbar Panel
+   ========================== */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* make header container tighter */
+  .header-container {
+    padding: 0 12px !important;
+    padding-left: 12px !important;
+    gap: 10px;
+  }
+
+  /* nav becomes dropdown panel on mobile */
+  header nav {
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    top: calc(100% + 10px);
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(15, 23, 42, 0.10);
+    border-radius: 16px;
+    box-shadow: 0 18px 45px rgba(2, 6, 23, 0.18);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 10px;
+    display: none;
+    /* hidden until toggle */
+    z-index: 2500;
+
+    transform: translateY(-6px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease, transform .25s ease;
+  }
+
+  /* open state */
+  header.menu-open nav {
+    display: block;
+    display: block;
+    /* tumhare code me already */
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+
+
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 6px;
+    padding: 6px;
+  }
+
+  nav a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 12px;
+  }
+
+  nav a:hover {
+    background: rgba(56, 189, 248, 0.12);
+  }
+
+  /* user dropdown: full width on mobile */
+  .user-dropdown {
+    position: static;
+    width: 100%;
+    margin-top: 6px;
+  }
+}
+
+
+/* ================================
+   USER DROPDOWN FINAL FIX (PASTE LAST)
+================================ */
+#siteHeader { z-index: 999999 !important; }
+.nav-user { position: relative !important; z-index: 9999999 !important; }
+#userMenuBtn { position: relative !important; z-index: 99999999 !important; }
+
+#userDropdown{
+  /* if old CSS had display:none !important, this will override using active */
+  display: none !important;
+}
+#userDropdown.active{
+  display: flex !important;
+}
+
+
+
+/* ============================================
+   Main Container & Layout
+   ============================================ */
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+section {
+  padding: var(--spacing-2xl) 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.section-title h2 {
+  color: var(--primary-blue);
+  margin-bottom: var(--spacing-md);
+}
+
+
+
+
+
+/* 
+=====================================================================
+ALL SECTION HEADING FLOW
+=============================================================
+*/
+
+/* ===== LUX HEADING FLOW (V2) ===== */
+.lux-heading {
+  opacity: 0;
+  transform: translateY(22px);
+  filter: blur(6px);
+  clip-path: inset(0 0 100% 0);
+
+  transition: clip-path 900ms cubic-bezier(.2, .8, .2, 1),
+    transform 900ms cubic-bezier(.2, .8, .2, 1),
+    opacity 900ms ease,
+    filter 900ms ease;
+
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+
+
+}
+
+.banner-heading {
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  font-weight: 500;
+}
+
+.lux-heading.in-view {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+  clip-path: inset(0 0 0 0);
+}
+
+/* word/element units */
+.lux-heading .unit {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(16px);
+  filter: blur(6px);
+  transition: opacity 650ms ease, transform 650ms ease, filter 650ms ease;
+}
+
+.lux-heading.in-view .unit {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* subtitle */
+.lux-sub {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 700ms ease, transform 700ms ease;
+  transition-delay: 420ms;
+}
+
+.lux-sub.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ✅ DEBUG BADGE */
+.lux-debug-badge {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 99999;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font: 700 12px/1.1 Inter, system-ui, Arial;
+  background: rgba(0, 0, 0, .75);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, .18);
+  backdrop-filter: blur(8px);
+}
+
+/* ====== SCROLL REVEAL (100% WORKING) ====== */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  will-change: transform, opacity;
+}
+
+/* animation */
+.reveal.is-visible {
+  animation: revealUp 900ms cubic-bezier(.2, .8, .2, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+
+/* delay from data-delay */
+.reveal[data-delay] {
+  --d: attr(data-delay ms);
+  /* some browsers ignore attr() for time */
+}
+
+/* ✅ safe delay fallback (works everywhere) */
+.reveal[data-delay="0"] {
+  animation-delay: 0ms;
+}
+
+.reveal[data-delay="120"] {
+  animation-delay: 120ms;
+}
+
+.reveal[data-delay="180"] {
+  animation-delay: 180ms;
+}
+
+.reveal[data-delay="250"] {
+  animation-delay: 250ms;
+}
+
+.reveal[data-delay="350"] {
+  animation-delay: 350ms;
+}
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+    filter: blur(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+
+/* ============================================================== */
+
+
+
+
+
+
+/* 
+=====================================================================
+HERO SECTION 
+=============================================================
+*/
+.hero {
+  text-align: center;
+}
+
+.subtitle {
+  font-family: 'Inter', sans-serif;
+  /* ⭐ missing tha */
+  font-size: 19px;
+  line-height: 1.75;
+  color: #475569;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.highlight-green {
+  color: #22c55e;
+  align-items: center;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 48px;
+  font-weight: 500;
+  color: #21343b;
+  text-align: center;
+}
+
+.hero .subtitle {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 19px;
+  line-height: 1.75;
+  color: #475569;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.plan-container {
+  margin-top: 30px;
+}
+
+.plan-loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-light);
+}
+
+.plan-note {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.plan-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.plan-list-item {
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.plan-list-item:last-child {
+  border-bottom: none;
+}
+
+
+.hero-heading {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #0f172a;
+  margin-bottom: auto;
+  letter-spacing: -0.01em;
+}
+
+.highlight-green {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #475569;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   Search Box (Booking Section)
+   ============================================ */
+
+
+
+
+
+/* ================================
+   FORCE WHITE BACKGROUND (FINAL OVERRIDE)
+   Paste at the END of style.css
+==================================*/
+
+.search-box,
+.search-form,
+.search-form .form-group,
+.search-form .field-big,
+.search-form input,
+.search-form select,
+.search-form textarea {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+
+.search-form input,
+.search-form select,
+.search-form textarea {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+.search-form .form-group:hover,
+.search-form .form-group:focus-within {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+.search-form input:-webkit-autofill,
+.search-form input:-webkit-autofill:hover,
+.search-form input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  box-shadow: 0 0 0 1000px #ffffff inset !important;
+  -webkit-text-fill-color: #0b2b52 !important;
+}
+
+
+/* Outer look */
+.search-box {
+  border: 1.7px solid transparent;
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(135deg, #6dd5ed, #667eea) border-box;
+  padding: 0 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 18px 45px rgba(9, 30, 66, 0.12) !important;
+  overflow: visible !important;
+}
+
+/* Title bar */
+.search-box h2 {
+  font-family: "Playfair Display", "Cinzel", "Georgia", serif !important;
+  font-size: 26px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  padding: 10px 16px !important;
+  /* pehle 22/34 tha, ab tight */
+  margin: 0 !important;
+  line-height: 1.15 !important;
+
+
+}
+
+/* Grid like screenshot */
+.search-form {
+  display: grid !important;
+  gap: 0 !important;
+  margin: 0 !important;
+  padding: 8px 10px 0 !important;
+  grid-template-columns: 1.2fr 52px 1.2fr 1fr 1fr 1fr 1fr 1fr !important;
+}
+
+/* Each cell */
+.search-form .form-group {
+  margin: 0 !important;
+  padding: 16px 14px !important;
+  background: #fff;
+  border-bottom: none !important;
+}
+
+.search-form .form-group:last-child {
+  border-right: none;
+}
+
+/* Labels */
+.search-form label {
+  text-transform: uppercase;
+  letter-spacing: 1.6px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #0b2b52 !important;
+}
+
+.search-form,
+.search-form input,
+.search-form select,
+.search-form label,
+.search-actions,
+.search-actions .btn {
+  font-family: 'Inter', sans-serif !important;
+
+}
+
+
+/* Remove the unwanted line inside FROM box area */
+.from-box {
+  border-top: none !important;
+  border-bottom: none !important;
+  border-right: none !important;
+}
+
+/* Swap column center */
+.swap-box {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Bigger icon */
+.swap-icon {
+  font-size: 28px !important;
+  line-height: 1;
+  padding: 8px;
+}
+
+
+/* Field wrapper */
+.field-big {
+  display: flex;
+  align-items: center;
+
+}
+
+/* Inputs/Selects like screenshot (no boxes) */
+.search-form input,
+.search-form select {
+  width: 100% !important;
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #0b2b52 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.search-form input::placeholder {
+  color: rgba(11, 43, 82, 0.55) !important;
+  font-weight: 600 !important;
+}
+
+/* Date hint */
+.hint {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  color: rgba(36, 50, 68, 0.65);
+  font-weight: 600;
+}
+
+/* Swap middle box */
+.swap-box {
+  background: transparent !important;
+}
+
+.swap-icon {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  font-size: 20px;
+  color: #0a2aa7;
+}
+
+/* Action row bottom */
+.search-actions {
+  display: flex !important;
+  justify-content: flex-end !important;
+  gap: 12px !important;
+  padding: 14px 18px 18px !important;
+  margin: 0 !important;
+}
+
+
+
+
+.budget-box {
+  grid-column: 1 / 4 !important;
+  grid-row: 2 !important;
+  border-bottom: none !important;
+}
+
+.transport-box {
+  border-right: none !important;
+}
+
+
+
+
+
+/* =================================================
+   MODERN LUXURY FIELD UI (ALL INPUTS + SELECTS)
+   ================================================= */
+
+/* make every field container modern */
+.search-form .form-group {
+  background: rgba(245, 246, 249, 0.02) !important;
+  /* border-radius: 14px !important; */
+  padding: 16px !important;
+  transition: box-shadow .2s ease, background .2s ease, transform .2s ease;
+}
+
+/* hover */
+.search-form .form-group:hover {
+  background: rgb(255, 255, 255) !important;
+  box-shadow: 0 10px 22px rgba(63, 75, 127, 0.264) !important;
+  transform: translateY(-1px);
+}
+
+/* focus ring */
+.search-form .form-group:focus-within {
+  background: #fff !important;
+  box-shadow: 0 0 0 3px rgba(10, 42, 167, .18),
+    0 10px 24px rgba(2, 6, 23, .08) !important;
+}
+
+/* =================================================
+   ALL INPUTS + SELECTS STYLE
+   ================================================= */
+
+.search-form input,
+.search-form select {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+
+  width: 100% !important;
+  padding: 10px 42px 10px 0 !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #0b2b52 !important;
+  cursor: text !important;
+
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* placeholder softer */
+.search-form input::placeholder {
+  color: rgba(11, 43, 82, .55) !important;
+}
+
+/* =================================================
+   MODERN ARROW (ALL SELECTS)
+   ================================================= */
+
+.search-form select {
+  cursor: pointer !important;
+}
+
+/* arrow container */
+.search-form .field-big {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* arrow */
+.search-form select+* {
+  pointer-events: none;
+}
+
+.search-form select {
+  padding-right: 44px !important;
+}
+
+.people-box .field-big::after,
+.travel-box .field-big::after,
+.transport-box .field-big::after {
+  content: "";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  transform: translateY(-60%) rotate(45deg);
+  border-right: 2px solid rgba(6, 222, 251, 0.456);
+  border-bottom: 2px solid rgba(9, 189, 234, 0.827);
+  pointer-events: none;
+}
+
+/* =================================================
+   DATE ICON CLEAN LOOK
+   ================================================= */
+
+input[type="date"] {
+  cursor: pointer;
+}
+
+/* =================================================
+   LABEL PREMIUM
+   ================================================= */
+
+.search-form label {
+  letter-spacing: 1.8px !important;
+  font-weight: 800 !important;
+}
+
+/* =================================================
+   BUDGET SAME STYLE
+   ================================================= */
+
+.budget-box {
+  background: rgba(2, 6, 23, 0.02) !important;
+}
+
+.search-form .form-group:focus-within {
+  box-shadow: 0 0 0 0.5px rgba(7, 156, 225, 0.505) !important;
+}
+
+
+/* ========================
+travel ,pepople, transport custom select (modern dropdown)
+================================ */
+
+
+.custom-select {
+  position: relative;
+}
+
+.select-head {
+  padding: 10px 38px 10px 10px;
+  /* right space arrow ke liye */
+  border: 1px solid rgba(2, 6, 23, 0.12);
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  position: relative;
+  /* ⭐ important */
+}
+
+.select-head::after {
+  content: "";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  transform: translateY(-50%) rotate(45deg);
+
+  border-right: 2px solid #174fbe;
+  border-bottom: 2px solid #1d52bd;
+}
+
+.select-dropdown {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  min-width: 220px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, .12);
+  display: none;
+  z-index: 99999;
+  overflow-y: auto;
+  max-height: 220px;
+}
+
+.custom-select.open .select-dropdown {
+  display: block;
+}
+
+.search-form,
+.booking-section,
+.booking-container,
+.form-group,
+.field-big {
+  overflow: visible !important;
+}
+
+.select-item {
+  padding: 12px 16px;
+  /* 5px se badhao */
+}
+
+.select-item img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.select-item:hover {
+  background: #f4f6ff;
+}
+
+.custom-select.open .select-dropdown {
+  display: block;
+}
+
+.search-form .custom-select .select-head,
+.search-form .custom-select .select-item {
+  font-family: 'Montserrat', sans-serif !important;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+
+
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .search-form {
+    grid-template-columns: 1fr !important;
+    padding: 0 !important;
+  }
+
+  .swap-box {
+    display: none !important;
+  }
+
+  .search-form .form-group {
+    border-right: none !important;
+  }
+
+  .search-actions {
+    justify-content: stretch !important;
+    flex-direction: column !important;
+  }
+
+  .search-actions .btn {
+    width: 100% !important;
+  }
+}
+
+
+
+
+/* clear and plan my trip  */
+.search-actions .btn-primary,
+.search-actions .btn-secondary {
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  border: 2px solid #0066cc;
+  background: transparent;
+  color: #0066cc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  /* ⭐ Navbar font */
+  font-family: 'Montserrat', sans-serif !important;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Hover only primary */
+.search-actions .btn-primary:hover {
+  background: linear-gradient(90deg, #12D8FF 0%, #5C77FF 50%, #A616FF 100%);
+  color: #fff;
+  border: #0b6ae7;
+}
+
+
+
+
+
+/* ============================================ 
+      National Popular Destinations Section
+  ============================================ */
+
+
+/* RIGHT TEXT AREA */
+.banner-text {
+  max-width: 520px;
+}
+
+/* HEADING — same luxury style */
+.banner-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 1.05;
+  color: #1a2b49;
+  margin-bottom: 16px;
+}
+
+.banner-heading span {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+/* SUBTITLE */
+.banner-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #5f6f87;
+  margin-bottom: 26px;
+}
+
+.popular-banner {
+  padding: 40px 5%;
+  background: #f5f9ff;
+}
+
+.banner-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* SLIDER CONTAINER */
+.banner-slider {
+  width: 800px;
+  flex: 0 0 800px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.banner-slides {
+  position: relative;
+  /* ✅ must */
+  height: 400px;
+  /* ✅ must */
+  display: block !important;
+  /* ✅ flex remove */
+}
+
+.banner-slides .slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+.banner-slides .slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.slide {
+  min-width: 100%;
+  height: 400px;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* DESTINATION NAME */
+.slide-title {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+/* Optional: dark gradient for readability */
+.slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0));
+}
+
+
+/* GUIDELINE PARAGRAPH */
+.banner-guideline {
+  font-size: 0.95rem;
+  color: #ffffff;
+  line-height: 1.5;
+  margin-bottom: 14px;
+  max-width: 280px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 600;
+}
+
+/* SMALL BUTTON */
+.view-btn {
+  padding: 0.6rem 1rem;
+  border-radius: 50px;
+  border: 2px solid #0066cc;
+  background: transparent;
+  color: #0066cc;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* .view-btn:hover {
+  background: linear-gradient(90deg, #12D8FF 0%, #5C77FF 50%, #A616FF 100%);
+  color: #fff;
+ 
+} */
+
+/* ============================================ 
+       International Destinations Section
+      ============================================  */
+.international-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(180deg, #f4fbff, #ffffff);
+}
+
+.international-container {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+.international-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 500;
+  color: #1a2b49;
+  line-height: 1.2;
+}
+
+
+.international-text h2 span {
+  color: #2ea44f;
+}
+
+.international-text p {
+  font-family: 'Inter', sans-serif;
+  font-size: 19px;
+  line-height: 1.8;
+  color: #475569;
+}
+
+
+.explore-btn {
+  padding: 0.6rem 1rem;
+  border-radius: 50px;
+  border: 2px solid #0066cc;
+  background: transparent;
+  color: #0066cc;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.international-container {
+  display: grid !important;
+  grid-template-columns: 1.1fr 1fr !important;
+  column-gap: 90px !important;
+  /* gap increase here */
+  align-items: center !important;
+}
+
+.international-stack {
+  position: relative;
+  width: 420px;
+  height: 520px;
+  cursor: pointer;
+
+  margin-left: 60px;
+  /* ← THIS creates visual gap */
+}
+
+/* Close button (top-right, like screenshot) */
+.stack-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.stack-close:hover {
+  transform: scale(1.06);
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.international-stack:hover .stack-photo.s1 {
+  transform: rotate(0deg) translate(0, -4px);
+}
+
+.stack-photo {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  /* softer shadow */
+  background: #fff;
+  transition: transform .3s ease;
+}
+
+.stack-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+.stack-photo.s5 {
+  transform: rotate(8deg) translate(15px, 8px);
+}
+
+.stack-photo.s4 {
+  transform: rotate(-6deg) translate(-12px, 6px);
+}
+
+.stack-photo.s3 {
+  transform: rotate(4deg) translate(9px, 4px);
+}
+
+.stack-photo.s2 {
+  transform: rotate(-3deg) translate(-5px, 2px);
+}
+
+/* front same */
+.stack-photo.s1 {
+  transform: rotate(0);
+}
+
+
+
+
+
+
+
+/*  ============================================  
+   member benifit section
+   ============================================  */
+/* ===== GoYatra Member Benefits (ASmallWorld style) ===== */
+.goyatra-benefits {
+  background: #ffffff;
+  /* off-white page tone like screenshot */
+  padding: 70px 0 80px;
+}
+
+.goyatra-benefits .benefits-wrap {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.goyatra-benefits .benefits-title {
+  font-family: 'Playfair Display', serif;
+  /* screenshot heading feel */
+  font-size: clamp(30px, 3.4vw, 44px);
+  font-weight: 500;
+  color: #23343a;
+  margin: 0 0 10px;
+}
+
+.goyatra-benefits .benefits-underline {
+  width: 170px;
+  height: 3px;
+  margin: 0 auto 36px;
+  border: 2.5px solid transparent;
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(135deg, #6dd5ed, #667eea) border-box;
+
+  border-radius: 99px;
+  opacity: 0.9;
+}
+
+/* Grid: 3 columns, 2 rows */
+.goyatra-benefits .benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* Card */
+.goyatra-benefits .benefit-card {
+  background:
+    linear-gradient(#c674c593, #ffffff) padding-box,
+    linear-gradient(135deg, #6dd5ed, #667eea) border-box;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  border-radius: 2px;
+  padding: 28px 22px 26px;
+  min-height: 210px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+}
+
+/* Icon */
+.goyatra-benefits .benefit-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 14px;
+  color: #24353b;
+  opacity: 0.95;
+}
+
+.goyatra-benefits .benefit-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Card heading */
+.goyatra-benefits .benefit-head {
+  font-family: 'Cinzel', serif;
+  /* luxury small caps vibe */
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #24353b;
+  margin: 6px 0 10px;
+}
+
+/* Card text */
+.goyatra-benefits .benefit-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: rgba(20, 30, 34, 0.78);
+  margin: 0;
+  max-width: 280px;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .goyatra-benefits .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .goyatra-benefits {
+    padding: 55px 0 65px;
+  }
+
+  .goyatra-benefits .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .goyatra-benefits .benefit-card {
+    min-height: auto;
+  }
+}
+
+
+
+/* 
+<!-- ============================================ 
+       “Daily travel inspiration” section
+      ============================================  --> */
+
+
+/* ===== Daily Travel Inspiration (ASmallWorld style) ===== */
+.inspire-section {
+  background: #ffffff;
+  /* off-white */
+  padding: 70px 0 85px;
+}
+
+.inspire-wrap {
+  width: min(1280px, 92%);
+  margin: 0 auto;
+  text-align: center;
+
+}
+
+.inspire-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(34px, 3.4vw, 52px);
+  font-weight: 500;
+  color: #24353b;
+  margin: 0 0 14px;
+
+}
+
+.inspire-title-line {
+  width: 180px;
+  height: 3px;
+  border-radius: 999px;
+  margin: 0 auto 44px;
+  opacity: 0.9;
+  border: 2.5px solid transparent;
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(135deg, #6dd5ed, #667eea) border-box;
+
+}
+
+/* 3 top + 3 bottom grid */
+.inspire-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
+  text-align: left;
+
+}
+
+/* Card */
+.inspire-card {
+  background: transparent;
+}
+
+/* Image */
+.inspire-img {
+  background: #eee;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  border: 1.5px solid transparent;
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(135deg, #6dd5ed, #667eea) border-box;
+
+}
+
+.inspire-img img {
+  width: 100%;
+  height: 320px;
+  /* screenshot feel */
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.inspire-card:hover .inspire-img img {
+  transform: scale(1.03);
+}
+
+/* Heading under image */
+.inspire-head {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 500;
+  color: #24353b;
+  margin: 22px 0 10px;
+  line-height: 1.15;
+}
+
+/* small underline below heading */
+.inspire-underline {
+  width: 140px;
+  height: 2px;
+  margin: 0 0 14px;
+  opacity: 0.9;
+  border: 2.5px solid transparent;
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(135deg, #6dd5ed, #667eea) border-box;
+
+}
+
+/* Subtitle text */
+.inspire-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(20, 30, 34, 0.70);
+  margin: 0;
+  max-width: 420px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .inspire-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .inspire-img img {
+    height: 280px;
+  }
+
+  .inspire-head {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 640px) {
+  .inspire-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .inspire-img img {
+    height: 240px;
+  }
+}
+
+
+
+/* ===============================================
+Footer area
+============================================ */
+
+/* ⭐ Footer same font as navbar */
+.main-footer,
+.main-footer h2,
+.main-footer h3,
+.main-footer a,
+.main-footer li,
+.main-footer p {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+}
+
+.main-footer {
+  background-image: linear-gradient(135deg, #d7d2cc 10%, #304352 100%);
+  color: #fbfbff;
+  padding-top: 60px;
+  margin-top: 80px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.footer-box h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.footer-box h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.footer-box p {
+  font-size: 14px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.footer-box ul {
+  list-style: none;
+}
+
+.footer-box ul li {
+  margin-bottom: 10px;
+}
+
+.footer-box ul li a {
+  color: #fafafa;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: 0.3s;
+}
+
+.footer-box ul li a:hover {
+  opacity: 1;
+  padding-left: 5px;
+}
+
+/* Social Icons */
+.social-icons {
+  margin-top: 15px;
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons a {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* .social-icons a img {
+  width: 30px;
+  height: 30px;
+} */
+
+
+.social-icons a:hover {
+  transform: translateY(-5px);
+}
+
+/* Bottom */
+.footer-bottom {
+  margin-top: 40px;
+  text-align: center;
+  padding: 18px;
+  background-image: linear-gradient(135deg, #d7d2cc 10%, #304352 100%);
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ===============================================================
+PAGE 4 : DESTIONATIONS
+Destination Filters section
+======================================================================*/
+
+
+/* ===============================
+   FILTER TABS
+   =============================== */
+.destination-filter .filter-link {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+.destination-filter {
+  padding: 40px 6%;
+}
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.filter-label {
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.filter-link {
+  background: none;
+  border: none;
+  padding: 6px 0;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #222;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.filter-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(135deg, #ff0b8d, #ff6a00);
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.filter-link:hover {
+  color: #ff0b8d;
+}
+
+.filter-link.active {
+  color: #ff0b8d;
+}
+
+.filter-link.active::after {
+  width: 100%;
+}
+
+
+/* ===============================
+   ALL DESTINATIONS SECTION 40 cards
+   =============================== */
+
+.travel-details h2 {
+  font-family: 'Playfair Display', serif;
+  /* ⭐ heading font */
+  font-size: 40px;
+  font-weight: 500;
+  color: #1a2b49;
+  line-height: 1.1;
+}
+
+.travel-details b {
+  font-family: 'Montserrat', sans-serif;
+  /* ⭐ navbar font */
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* li normal text */
+.travel-details li {
+  font-weight: 400;
+  /* ⭐ bold remove */
+  font-family: 'Inter', sans-serif;
+  /* subtitle font */
+  color: #040404;
+}
+
+.travel-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+  padding: 80px 6%;
+}
+
+.travel-card {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  transition: all 0.4s ease;
+}
+
+
+
+.travel-card.reverse {
+  flex-direction: row-reverse !important;
+}
+
+.travel-card.hidden {
+  display: none !important;
+}
+
+.travel-images {
+  flex: 1;
+  height: 330px;
+  /* tumhara original fixed height */
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+}
+
+.travel-images img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  /* smooth fade */
+}
+
+.travel-images img.active {
+  opacity: 1;
+  z-index: 2;
+  /* visible image always on top */
+}
+
+.travel-images img:nth-child(2) {
+  animation-delay: 3s;
+}
+
+
+.travel-images img:nth-child(2) {
+  animation-delay: 3s;
+}
+
+@keyframes slideFade {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  10% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  40% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  50% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+
+.travel-details {
+  flex: 1;
+}
+
+.travel-details h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.travel-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.travel-details li {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* plane new trip button */
+
+.plan-trip-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.travel-details button {
+  margin-top: 25px;
+  padding: 14px 36px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  background: linear-gradient(90deg, #12D8FF 0%, #5C77FF 50%, #A616FF 100%);
+  color: #fff;
+  border: #000000;
+}
+
+
+/* ============================================================================================================================================================================ */
+/* PAGE : 2 plantrip.html */
+/* =========================================
+   PlanTrip: Trip Details Page
+   ========================================= */
+
+.trip-right,
+.trip-right * {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+/* Optional: exactly navbar style for headings */
+.trip-right .trip-heading {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 500;
+}
+
+/* Optional: tp-block h3 also like navbar */
+.trip-right .tp-block h3 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+
+
+.trip-page {
+  padding: 25px 0;
+  font-family: "Inter", sans-serif;
+
+}
+
+.trip-split {
+  display: grid;
+  grid-template-columns: 1.1fr 1.4fr;
+  gap: 18px;
+  align-items: stretch;
+  margin-top: 20px;
+}
+
+/* Left image */
+.trip-left {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.10);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fff;
+  height: 520px;
+  /* ✅ fixed height */
+}
+
+.trip-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Right details (same height) */
+.trip-right {
+  height: 520px;
+  /* ✅ same as image */
+  border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fff;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.trip-heading {
+  margin: 0 0 10px;
+  font-family: 'Montserrat', sans-serif !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-size: small;
+}
+
+.trip-details-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+/* scrollbar (optional) */
+.trip-details-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.trip-details-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+/* blocks */
+.tp-block {
+  padding: 14px;
+  border-radius: 14px;
+  background: #f7fbff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  margin-bottom: 12px;
+}
+
+.tp-block h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+/* one-line pills */
+.tp-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.tp-pill {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(2, 132, 199, 0.07);
+  font-weight: 600;
+}
+
+.tp-line {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  background: #ffffff;
+  margin: 8px 0;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+
+
+/* Train options list bold */
+#tripSummary ul li {
+  font-weight: 450;
+  color: #004499;
+  font-size: smaller;
+  margin-left: 12px;
+}
+
+
+
+
+/* ===============================
+   Download / Save / New Trip Buttons
+   =============================== */
+
+.download-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin: 28px 0 14px;
+  flex-wrap: wrap;
+
+}
+
+/* BASE BUTTON */
+.download-wrap .btn {
+  padding: 14px 26px;
+  /* ⭐ proper padding */
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #0f172a;
+  font-family: 'Montserrat', sans-serif !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  transition: all .25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .06);
+}
+
+/* ⭐ PRIMARY (Download PDF) */
+#downloadPlanBtn {
+  background: linear-gradient(135deg, #0ea5e9, #2563eb);
+  color: #fff;
+  border: none;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, .35);
+}
+
+/* ⭐ SAVE TRIP (glass outline) */
+#saveTripBtn {
+  background: rgba(255, 255, 255, .7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(2, 6, 23, .08);
+}
+
+/* ⭐ NEW TRIP (accent outline) */
+#newTripBtn {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+}
+
+/* ⭐ HOVER */
+.download-wrap .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .12);
+}
+
+/* PRIMARY hover */
+#downloadPlanBtn:hover {
+  box-shadow: 0 16px 40px rgba(37, 99, 235, .45);
+}
+
+/* ACTIVE */
+.download-wrap .btn:active {
+  transform: scale(.96);
+}
+
+/* icon */
+.gif-icon {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+
+
+
+
+
+
+/* ================================
+   Carousel Arrow Buttons
+==================================*/
+/* =========================================
+   Modern Luxury Carousel (Hotels + Places)
+   Works with: .hotel-section .hotel-carousel .hotel-card .hotel-nav
+   ========================================= */
+
+/* section spacing */
+.hotel-section {
+  margin-top: 22px;
+}
+
+.hotel-head h2 {
+  margin: 0 0 6px;
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+
+.hotel-head p {
+  margin: 0 0 16px;
+  font-family: 'Montserrat', sans-serif !important;
+  opacity: .78;
+}
+
+/* carousel wrapper */
+.hotel-carousel {
+  position: relative;
+  padding: 14px 0;
+}
+
+/* viewport (glassy frame) */
+.hotel-viewport {
+  overflow: hidden;
+  border-radius: 18px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 18px 45px rgba(2, 6, 23, 0.10);
+}
+
+/* track */
+.hotel-track {
+  display: flex;
+  gap: 18px;
+  will-change: transform;
+  transition: transform 450ms cubic-bezier(.2, .8, .2, 1);
+}
+
+/* cards (luxury glass + depth) */
+.hotel-card {
+  flex: 0 0 calc((100% - 36px) / 3);
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow:
+    0 14px 35px rgba(2, 6, 23, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  transform: translateY(0);
+  transition: transform .35s cubic-bezier(.2, .8, .2, 1),
+    box-shadow .35s cubic-bezier(.2, .8, .2, 1),
+    border-color .35s ease;
+}
+
+.hotel-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(14, 165, 233, 0.28);
+  box-shadow:
+    0 22px 55px rgba(2, 6, 23, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+/* image */
+.hotel-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+  background: #f1f5f9;
+  transform: scale(1);
+  transition: transform .5s cubic-bezier(.2, .8, .2, 1),
+    filter .5s cubic-bezier(.2, .8, .2, 1);
+}
+
+.hotel-card:hover img {
+  transform: scale(1.04);
+  filter: saturate(1.08) contrast(1.02);
+}
+
+/* info */
+.hotel-info {
+  padding: 14px 14px 16px;
+  border-top: 1px solid rgba(2, 6, 23, 0.08);
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.hotel-info .hotel-name {
+  margin: 0 0 6px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: .2px;
+}
+
+.hotel-info p {
+  margin: 6px 0 0;
+  color: rgba(15, 23, 42, 0.74);
+  line-height: 1.45;
+  font-size: 0.95rem;
+}
+
+.hotel-info .hotel-price {
+  margin-top: 8px;
+  font-weight: 700;
+  color: rgba(15, 23, 42, 0.85);
+}
+
+/* =========================
+   Luxury Arrow Buttons
+========================= */
+
+.hotel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+
+  /* glass */
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.62);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  z-index: 10;
+
+  box-shadow:
+    0 16px 40px rgba(2, 6, 23, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+
+  transition: transform .35s cubic-bezier(.2, .8, .2, 1),
+    box-shadow .35s cubic-bezier(.2, .8, .2, 1),
+    border-color .35s ease,
+    opacity .25s ease;
+}
+
+.hotel-prev {
+  left: -68px;
+}
+
+.hotel-next {
+  right: -68px;
+}
+
+.hotel-nav:hover {
+  transform: translateY(-50%) scale(1.10);
+  border-color: rgba(14, 165, 233, 0.35);
+  box-shadow:
+    0 22px 55px rgba(2, 6, 23, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.hotel-nav:active {
+  transform: translateY(-50%) scale(.94);
+}
+
+.hotel-nav:disabled {
+  opacity: .35;
+  cursor: not-allowed;
+}
+
+/* arrow icon image */
+.hotel-nav img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  opacity: .88;
+  transform: scale(1);
+  transition: transform .25s ease, opacity .25s ease;
+}
+
+.hotel-nav:hover img {
+  opacity: 1;
+  transform: scale(1.06);
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 980px) {
+  .hotel-card {
+    flex: 0 0 calc((100% - 18px) / 2);
+  }
+
+  .hotel-prev {
+    left: -10px;
+  }
+
+  .hotel-next {
+    right: -10px;
+  }
+
+  .hotel-viewport {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hotel-card {
+    flex: 0 0 100%;
+  }
+
+  .hotel-prev {
+    left: 6px;
+  }
+
+  .hotel-next {
+    right: 6px;
+  }
+
+  .hotel-nav {
+    width: 48px;
+    height: 48px;
+  }
+
+  .hotel-nav img {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* =====================================================
+ fomous visiting places section
+========================================= */
+.hotel-head h2 {
+  font-family: 'Playfair Display', serif !important;
+}
+
+.hotel-card .hotel-name,
+.hotel-card p,
+.hotel-card span {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+/* same carousel base like hotels */
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  position: relative;
+}
+
+.carousel-viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 18px;
+  transition: transform .35s ease;
+  will-change: transform;
+}
+
+/* place cards should behave like hotel cards */
+.place-card {
+  flex: 0 0 calc((100% - 36px) / 3);
+  max-width: calc((100% - 36px) / 3);
+}
+
+/* image sizing same feel like hotels */
+.place-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+/* arrow buttons same as hotel section (circle) */
+.carousel-nav {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: #fff;
+  color: #111;
+  font-size: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+.carousel-nav:hover {
+  transform: translateY(-1px);
+}
+
+.places-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .place-card {
+    flex: 0 0 calc((100% - 18px) / 2);
+    max-width: calc((100% - 18px) / 2);
+  }
+}
+
+@media (max-width: 520px) {
+  .place-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .place-card img {
+    height: 220px;
+  }
+}
+
+
+
+
+
+
+/* =========================================
+   Hotels Carousel
+   ========================================= */
+
+
+.hotel-section {
+  margin-top: 18px;
+}
+
+.hotel-head h2 {
+  margin: 0 0 4px;
+}
+
+.hotel-head p {
+  margin: 0 0 14px;
+  opacity: .8;
+}
+
+.hotel-carousel {
+  position: relative;
+  padding: 12px 0;
+}
+
+.hotel-viewport {
+  overflow: hidden;
+  padding-bottom: 2px;
+  border-radius: 10px;
+}
+
+.hotel-track {
+  display: flex;
+  gap: 18px;
+  will-change: transform;
+  transition: transform 450ms ease;
+}
+
+/* 3 cards visible */
+.hotel-card {
+  flex: 0 0 calc((100% - 36px) / 3);
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.hotel-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  background: #f2f2f2;
+}
+
+.hotel-info {
+  padding: 12px 14px;
+  border-top: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.hotel-info .hotel-name {
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: #111827;
+}
+
+.hotel-info .hotel-price {
+  margin: 0;
+  font-size: 0.92rem;
+  color: #6b7280;
+}
+
+/* Overlay round arrows (video jaisa) */
+.hotel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid #d4d867;
+  background: #ffffff;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 5;
+  transition: all 0.2s ease;
+}
+
+.hotel-nav:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.hotel-prev {
+  left: -56px;
+}
+
+.hotel-next {
+  right: -56px;
+}
+
+.hotel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid #d1d5db;
+  background: #ffffff;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 5;
+  transition: all 0.2s ease;
+}
+
+.hotel-arrow:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.hotel-arrow.left {
+  left: -8px;
+}
+
+.hotel-arrow.right {
+  right: -8px;
+}
+
+.hotel-nav:active {
+  transform: translateY(-50%) scale(0.96);
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .hotel-card {
+    flex: 0 0 calc((100% - 18px) / 2);
+  }
+
+  /* 2 cards */
+}
+
+@media (max-width: 520px) {
+  .hotel-card {
+    flex: 0 0 100%;
+  }
+
+  /* 1 card */
+  .hotel-prev {
+    left: 6px;
+  }
+
+  .hotel-next {
+    right: 6px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+============================================================================================
+Mytrips.html page 
+===============================================================================================
+*/
+
+
+/* ==========================
+   MY TRIPS GRID
+   ========================== */
+
+
+
+
+
+#main .card,
+#main .card * {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+
+#main .card-title {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+#main .card-sub {
+  text-transform: none;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+/* Buttons bhi same navbar font */
+#main .btn-card {
+  font-family: 'Montserrat', sans-serif !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-size: smaller;
+}
+
+
+
+.mytrips-status {
+  text-align: center;
+  margin: 20px 0;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.card-sub {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.5;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding: 0 20px;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+#main .card {
+  height: 360px;
+  border-radius: 20px;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
+
+  position: relative;
+  cursor: pointer;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#main .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+}
+
+.card-content {
+  height: 100%;
+  padding: 18px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.card-sub {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.card-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.btn-card {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+
+  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-card:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.btn-view {
+  background: #0066cc;
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(0, 102, 204, 0.25);
+}
+
+.btn-delete {
+  background: #ff3b3b;
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(255, 59, 59, 0.25);
+}
+
+@media (max-width: 1024px) {
+  #main {
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  #main {
+    grid-template-columns: 1fr;
+  }
+
+  #main .card {
+    height: 320px;
+  }
+}
+
+/* Plan New Trip Button */
+.plan-trip-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 60px;
+}
+
+.plan-trip-btn {
+  padding: 14px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+
+  background: linear-gradient(90deg, #12D8FF 0%, #5C77FF 50%, #A616FF 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+
+  box-shadow: 0 10px 28px rgba(0, 102, 204, 0.25);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.plan-trip-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(0, 102, 204, 0.35);
+  color: #fff;
+}
+
+
+
+/* ==================================
+user.html page
+=====================================*/
+
+/* Page base */
+body[data-page="auth"] {
+  min-height: 100vh;
+  color: #0f172a;
+
+  /* ✅ Full page font Montserrat */
+  font-family: 'Montserrat', sans-serif;
+
+  background:
+    radial-gradient(900px 520px at 10% 10%, rgba(45, 212, 191, 0.18), transparent 60%),
+    radial-gradient(900px 520px at 90% 15%, rgba(99, 102, 241, 0.16), transparent 60%),
+    radial-gradient(900px 520px at 60% 95%, rgba(56, 189, 248, 0.12), transparent 55%),
+    linear-gradient(180deg, #f7fbff 0%, #ffffff 45%, #ffffff 100%);
+}
+
+/* Layout */
+.auth-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft top highlight */
+.auth-shell::before {
+  content: "";
+  position: absolute;
+  inset: -40px -40px auto -40px;
+  height: 260px;
+  background: radial-gradient(closest-side at 30% 40%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+/* =========================
+   LEFT - Welcome panel (Luxury Background)
+   ========================= */
+.welcome-section {
+
+
+  padding: 56px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+
+  color: #f3f7ff;
+  position: relative;
+  overflow: hidden;
+
+  /* ✅ LUXURY COLOR BLEND (deep navy + emerald + subtle gold) */
+  background-image: linear-gradient(135deg, #6a11cb 10%, #2575fc 100%);
+}
+
+.welcome-section::after {
+  content: "";
+  position: absolute;
+  inset: -70px;
+  background:
+    radial-gradient(closest-side at 25% 20%, rgba(255, 255, 255, 0.10), transparent 60%),
+    radial-gradient(closest-side at 70% 70%, rgba(255, 255, 255, 0.08), transparent 62%);
+  transform: rotate(7deg);
+  pointer-events: none;
+
+
+
+}
+
+.welcome-section .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Logo only image */
+.welcome-section .brand img {
+  width: 190px;
+  max-width: 100%;
+  object-fit: contain;
+
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 14px;
+  padding: 10px 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow:
+    0 16px 44px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+/* ✅ LEFT typography (Montserrat luxury) */
+.welcome-section h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.85rem, 2.7vw, 2.55rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 10px 34px rgba(0, 0, 0, 0.30);
+  position: relative;
+  z-index: 1;
+}
+
+.welcome-section p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  max-width: 460px;
+  opacity: 0.92;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.88);
+  position: relative;
+  z-index: 1;
+}
+
+/* badges (optional) */
+.welcome-badges {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.welcome-badges .badge {
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  padding: 10px 12px;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  color: rgba(255, 255, 255, 0.92);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* =========================
+   RIGHT - Login area
+   ========================= */
+.login-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 28px;
+  position: relative;
+}
+
+/* right subtle gradients */
+.login-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(650px 420px at 30% 30%, rgba(99, 102, 241, 0.10), transparent 60%),
+    radial-gradient(520px 360px at 70% 70%, rgba(45, 212, 191, 0.10), transparent 60%);
+  pointer-events: none;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 460px;
+  padding: 32px 30px;
+
+  background: rgba(255, 255, 255, 0.78);
+  border-radius: 22px;
+
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  box-shadow:
+    0 26px 70px rgba(2, 6, 23, 0.12),
+    0 12px 30px rgba(2, 6, 23, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  position: relative;
+  z-index: 1;
+}
+
+/* subtle premium border glow */
+.login-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  padding: 1px;
+  background: linear-gradient(135deg,
+      rgba(45, 212, 191, 0.28),
+      rgba(99, 102, 241, 0.22),
+      rgba(56, 189, 248, 0.14),
+      rgba(255, 255, 255, 0.10));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.login-card h2 {
+  margin: 0 0 8px;
+  font-size: 1.92rem;
+  letter-spacing: -0.02em;
+  font-weight: 850;
+  color: #0b1220;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.login-card p.sub-text {
+  margin: 0 0 18px;
+  color: rgba(15, 23, 42, 0.65);
+  font-size: 0.98rem;
+  line-height: 1.5;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Status message */
+.status-message {
+  display: none;
+  border-radius: 14px;
+  padding: 12px 12px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.status-message.show {
+  display: block;
+}
+
+.status-message.error {
+  background: rgba(239, 68, 68, 0.10);
+  color: #991b1b;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.status-message.success {
+  background: rgba(34, 197, 94, 0.10);
+  color: #166534;
+  border: 1px solid rgba(34, 197, 94, 0.25);
+}
+
+/* Form spacing */
+.auth-form .form-group {
+  margin-bottom: 14px;
+}
+
+.auth-form label {
+  display: block;
+  margin: 0 0 8px;
+  font-size: 0.86rem;
+  font-weight: 850;
+  letter-spacing: 0.02em;
+  color: rgba(15, 23, 42, 0.70);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Inputs */
+.auth-form input {
+  width: 100%;
+  height: 40px;
+  padding: 12px 14px;
+
+  border-radius: 14px;
+  border: 1px solid rgba(15, 23, 42, 0.10);
+
+  background: rgba(255, 255, 255, 0.92);
+  color: #0b1220;
+
+  font-size: 0.90rem;
+  font-weight: 650;
+  font-family: 'Montserrat', sans-serif;
+
+  outline: none;
+
+  box-shadow:
+    0 10px 22px rgba(2, 6, 23, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78);
+
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.auth-form input::placeholder {
+  color: rgba(15, 23, 42, 0.38);
+  font-weight: 600;
+}
+
+.auth-form input:focus {
+  border-color: rgba(20, 184, 166, 0.60);
+  box-shadow:
+    0 18px 34px rgba(20, 184, 166, 0.16),
+    0 10px 20px rgba(2, 6, 23, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78);
+  transform: translateY(-1px);
+}
+
+/* Password input + button */
+.password-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrap input {
+  padding-right: 92px;
+}
+
+.eye-toggle {
+  position: absolute;
+  right: 8px;
+  height: 36px;
+  padding: 0 12px;
+
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.70);
+
+  font-size: 0.84rem;
+  font-weight: 850;
+  letter-spacing: 0.01em;
+  color: rgba(15, 23, 42, 0.72);
+
+  cursor: pointer;
+
+  transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.eye-toggle:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(20, 184, 166, 0.25);
+  box-shadow: 0 14px 26px rgba(2, 6, 23, 0.10);
+  transform: translateY(-1px);
+}
+
+/* Primary button */
+.auth-btn {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 14px;
+
+  background: linear-gradient(135deg, #6a11cb 10%, #2575fc 100%);
+  color: #ffffff;
+
+  font-size: 0.98rem;
+  font-weight: 950;
+  letter-spacing: 0.02em;
+  font-family: 'Montserrat', sans-serif;
+
+  cursor: pointer;
+  margin-top: 10px;
+
+  box-shadow:
+    0 22px 50px rgba(29, 78, 216, 0.18),
+    0 14px 30px rgba(15, 118, 110, 0.16);
+
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.auth-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+  box-shadow:
+    0 26px 60px rgba(29, 78, 216, 0.22),
+    0 16px 36px rgba(15, 118, 110, 0.18);
+}
+
+.auth-btn:active {
+  transform: translateY(0);
+}
+
+.auth-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  filter: none;
+  box-shadow: none;
+}
+
+/* Switch text */
+.auth-switch {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.92rem;
+  color: rgba(15, 23, 42, 0.68);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.auth-switch button {
+  border: none;
+  background: transparent;
+  color: #1d4ed8;
+  font-weight: 900;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.auth-switch button:hover {
+  background: rgba(29, 78, 216, 0.10);
+}
+
+/* Mini note (optional) */
+.mini-note {
+  margin: 14px 0 0;
+  text-align: center;
+  font-size: 0.86rem;
+  color: rgba(15, 23, 42, 0.55);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.mini-note span {
+  font-weight: 900;
+  color: rgba(15, 23, 42, 0.75);
+}
+
+/* Utility */
+.hidden {
+  display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .auth-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-section {
+    padding: 30px 20px;
+  }
+
+  .login-section {
+    padding: 32px 20px;
+  }
+
+  .login-card {
+    max-width: 360px;
+    padding: 24px 22px;
+  }
+}
+
+@media (max-width: 420px) {
+  .welcome-section .brand img {
+    width: 170px;
+  }
+
+  .auth-form input {
+    height: 48px;
+  }
+
+  .auth-btn {
+    height: 50px;
+  }
+}

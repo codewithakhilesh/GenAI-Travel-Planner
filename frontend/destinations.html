@@ -1,0 +1,845 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Destinations - GoYatra</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body data-page="destinations">
+
+  <!-- ============================================
+       HEADER & NAVIGATION
+       ============================================ -->
+    <header id="siteHeader">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon">TRAVELING PLANNING PLATFORM</span>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="nav-toggle" id="navToggleBtn" type="button" aria-label="Menu" aria-expanded="false">
+                <img src="assets/icons/menu1.png" alt="menu" class="menu-icon">
+
+            </button>
+
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#bookingForm">Plan Trip</a></li>
+
+                    <li><a href="mytrips.html">My Trips</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+
+                    <li class="nav-user">
+                        <button class="user-btn" id="userMenuBtn" type="button" aria-expanded="false">
+                            <img src="assets/GIF/profile.gif" alt="User" class="user-icon">
+                            <span>User</span>
+                        </button>
+
+                        <div class="user-dropdown" id="userDropdown">
+                            <a href="user.html">LogOut</a>
+                            <!-- <button type="button" id="logoutBtn">Logout</button>
+                            <button type="button" id="deleteAccountBtn" style="display:none;">Delete Account</button> -->
+
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================
+       HERO SECTION
+       ============================================ -->
+  <section class="hero">
+    <div class="container">
+      <h1>
+        Explore India Your Way -
+        <span class="highlight-green">Your Journey Our Way</span>
+      </h1>
+      <p>AI-powered travel planning for your perfect Indian adventure</p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FILTERS
+       ============================================ -->
+  <section class="destination-filter">
+    <div class="filter-row">
+      <span class="filter-label">Filter:</span>
+
+      <button class="filter-link active" data-filter="all" type="button">All</button>
+      <button class="filter-link" data-filter="beach" type="button">Beach</button>
+      <button class="filter-link" data-filter="nature" type="button">Nature</button>
+      <button class="filter-link" data-filter="heritage" type="button">Heritage</button>
+      <button class="filter-link" data-filter="city" type="button">City</button>
+      <button class="filter-link" data-filter="culture" type="button">Culture</button>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ALL DESTINATIONS SECTION
+       ============================================ -->
+  <section class="travel-sections">
+
+    <!-- CARD 1 – Goa -->
+<div class="travel-card" data-category="beach,culture">
+  <div class="travel-images">
+    <img src="assets/images/goa1.jpg" alt="Goa Beach">
+    <img src="assets/images/goa2.jpg" alt="Goa Sunset">
+  </div>
+  <div class="travel-details">
+    <h2>Goa</h2>
+    <ul>
+      <li><b>Best Time:</b> Nov – Feb</li>
+      <li><b>Budget:</b> ₹12,000 – ₹25,000</li>
+      <li><b>Visiting Places:</b> Baga Beach, Calangute, Fort Aguada</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 2 – Manali -->
+<div class="travel-card" data-category="nature">
+  <div class="travel-images">
+    <img src="assets/images/manali1.jpg" alt="Manali Mountain View">
+    <img src="assets/images/manali2.jpg" alt="Manali River View">
+  </div>
+  <div class="travel-details">
+    <h2>Manali</h2>
+    <ul>
+      <li><b>Best Time:</b> Oct – Feb</li>
+      <li><b>Budget:</b> ₹15,000 – ₹30,000</li>
+      <li><b>Visiting Places:</b> Solang Valley, Rohtang Pass, Hidimba Temple</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 3 – Kashmir -->
+<div class="travel-card" data-category="nature">
+  <div class="travel-images">
+    <img src="assets/images/kashmir1.jpg" alt="Kashmir Valley">
+    <img src="assets/images/kashmir2.jpg" alt="Dal Lake Kashmir">
+  </div>
+  <div class="travel-details">
+    <h2>Kashmir</h2>
+    <ul>
+      <li><b>Best Time:</b> Mar – Aug</li>
+      <li><b>Budget:</b> ₹18,000 – ₹35,000</li>
+      <li><b>Visiting Places:</b> Gulmarg, Pahalgam, Dal Lake</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 4 – Kerala -->
+<div class="travel-card" data-category="beach,nature">
+  <div class="travel-images">
+    <img src="assets/images/kerala1.jpg" alt="Kerala Backwaters">
+    <img src="assets/images/kerala2.jpg" alt="Kerala Beach">
+  </div>
+  <div class="travel-details">
+    <h2>Kerala</h2>
+    <ul>
+      <li><b>Best Time:</b> Sep – Mar</li>
+      <li><b>Budget:</b> ₹14,000 – ₹28,000</li>
+      <li><b>Visiting Places:</b> Munnar, Alleppey, Varkala</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 5 – Jaipur -->
+<div class="travel-card" data-category="heritage,culture">
+  <div class="travel-images">
+    <img src="assets/images/jaipur1.jpeg" alt="Jaipur City Palace">
+    <img src="assets/images/jaipur2.jpeg" alt="Jaipur Fort">
+  </div>
+  <div class="travel-details">
+    <h2>Jaipur</h2>
+    <ul>
+      <li><b>Best Time:</b> Oct – Mar</li>
+      <li><b>Budget:</b> ₹10,000 – ₹22,000</li>
+      <li><b>Visiting Places:</b> Hawa Mahal, Amer Fort, City Palace</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 6 – Leh – Ladakh -->
+<div class="travel-card" data-category="nature">
+  <div class="travel-images">
+    <img src="assets/images/ladakh1.jpeg" alt="Ladakh Mountain View">
+    <img src="assets/images/ladakh2.jpeg" alt="Ladakh Valley View">
+  </div>
+  <div class="travel-details">
+    <h2>Leh – Ladakh</h2>
+    <ul>
+      <li><b>Best Time:</b> May – Sep</li>
+      <li><b>Budget:</b> ₹20,000 – ₹40,000</li>
+      <li><b>Visiting Places:</b> Pangong Lake, Nubra Valley, Khardung La</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 7 – Agra -->
+<div class="travel-card" data-category="heritage">
+  <div class="travel-images">
+    <img src="assets/images/agra1.jpg" alt="Taj Mahal">
+    <img src="assets/images/agra2.jpg" alt="Agra Fort">
+  </div>
+  <div class="travel-details">
+    <h2>Agra</h2>
+    <ul>
+      <li><b>Best Time:</b> Oct – Mar</li>
+      <li><b>Budget:</b> ₹8,000 – ₹18,000</li>
+      <li><b>Visiting Places:</b> Taj Mahal, Agra Fort, Mehtab Bagh</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 8 – Rishikesh -->
+<div class="travel-card" data-category="nature,culture">
+  <div class="travel-images">
+    <img src="assets/images/rishikesh1.jpg" alt="Rishikesh River View">
+    <img src="assets/images/rishikesh2.jpg" alt="Rishikesh Temple">
+  </div>
+  <div class="travel-details">
+    <h2>Rishikesh</h2>
+    <ul>
+      <li><b>Best Time:</b> Feb – Jun</li>
+      <li><b>Budget:</b> ₹7,000 – ₹15,000</li>
+      <li><b>Visiting Places:</b> Laxman Jhula, Triveni Ghat, River Rafting</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 9 – Udaipur -->
+<div class="travel-card" data-category="heritage">
+  <div class="travel-images">
+    <img src="assets/images/udaipur1.jpg" alt="Udaipur City Palace">
+    <img src="assets/images/udaipur2.jpg" alt="Udaipur Lake View">
+  </div>
+  <div class="travel-details">
+    <h2>Udaipur</h2>
+    <ul>
+      <li><b>Best Time:</b> Sep – Mar</li>
+      <li><b>Budget:</b> ₹12,000 – ₹26,000</li>
+      <li><b>Visiting Places:</b> City Palace, Lake Pichola, Jag Mandir</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 10 – Andaman & Nicobar -->
+<div class="travel-card" data-category="beach">
+  <div class="travel-images">
+    <img src="assets/images/andaman1.jpg" alt="Andaman Beach">
+    <img src="assets/images/andaman2.jpg" alt="Andaman Island View">
+  </div>
+  <div class="travel-details">
+    <h2>Andaman & Nicobar</h2>
+    <ul>
+      <li><b>Best Time:</b> Oct – May</li>
+      <li><b>Budget:</b> ₹25,000 – ₹50,000</li>
+      <li><b>Visiting Places:</b> Radhanagar Beach, Cellular Jail, Neil Island</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 11 – Varanasi -->
+<div class="travel-card" data-category="culture,heritage">
+  <div class="travel-images">
+    <img src="assets/images/varanasi1.jpeg" alt="Varanasi Ghat View">
+    <img src="assets/images/varanasi2.jpeg" alt="Varanasi Temple View">
+  </div>
+  <div class="travel-details">
+    <h2>Varanasi</h2>
+    <ul>
+      <li><b>Best Time:</b> Oct – Mar</li>
+      <li><b>Budget:</b> ₹10,000 – ₹20,000</li>
+      <li><b>Visiting Places:</b> Kashi Vishwanath, Dashashwamedh Ghat, Sarnath</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 12 – Hampi -->
+<div class="travel-card" data-category="heritage">
+  <div class="travel-images">
+    <img src="assets/images/hampi1.jpeg" alt="Hampi Temple View">
+    <img src="assets/images/hampi2.jpeg" alt="Hampi Archaeological Site">
+  </div>
+  <div class="travel-details">
+    <h2>Hampi</h2>
+    <ul>
+      <li><b>Best Time:</b> Oct – Mar</li>
+      <li><b>Budget:</b> ₹12,000 – ₹25,000</li>
+      <li><b>Visiting Places:</b> Virupaksha Temple, Hampi Bazaar, Vittala Temple</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 13 – Mumbai -->
+<div class="travel-card" data-category="city,culture">
+  <div class="travel-images">
+    <img src="assets/images/mumbai1.jpeg" alt="Mumbai City View">
+    <img src="assets/images/mumbai2.jpeg" alt="Mumbai Harbour View">
+  </div>
+  <div class="travel-details">
+    <h2>Mumbai</h2>
+    <ul>
+      <li><b>Best Time:</b> Nov – Feb</li>
+      <li><b>Budget:</b> ₹15,000 – ₹35,000</li>
+      <li><b>Visiting Places:</b> Gateway of India, Marine Drive, Elephanta Caves</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 14 – Coorg -->
+<div class="travel-card" data-category="nature,beach">
+  <div class="travel-images">
+    <img src="assets/images/coorg1.jpeg" alt="Coorg Mountain View">
+    <img src="assets/images/coorg2.jpeg" alt="Coorg Tea Estate View">
+  </div>
+  <div class="travel-details">
+    <h2>Coorg</h2>
+    <ul>
+      <li><b>Best Time:</b> Oct – Mar</li>
+      <li><b>Budget:</b> ₹12,000 – ₹28,000</li>
+      <li><b>Visiting Places:</b> Abbey Falls, Raja’s Seat, Talacauvery</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 15 – Pondicherry -->
+<div class="travel-card" data-category="beach,culture">
+  <div class="travel-images">
+    <img src="assets/images/pondicherry1.jpeg" alt="Pondicherry Beach View">
+    <img src="assets/images/pondicherry2.jpeg" alt="Pondicherry Heritage Building">
+  </div>
+  <div class="travel-details">
+    <h2>Pondicherry</h2>
+    <ul>
+      <li><b>Best Time:</b> Oct – Mar</li>
+      <li><b>Budget:</b> ₹10,000 – ₹22,000</li>
+      <li><b>Visiting Places:</b> Promenade Beach, Aurobindo Ashram, Paradise Beach</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 16 – Rann of Kutch -->
+<div class="travel-card" data-category="nature,heritage">
+  <div class="travel-images">
+    <img src="assets/images/Rann of kutch1.jpeg" alt="Rann of Kutch Desert View">
+    <img src="assets/images/Rann of kutch2.jpeg" alt="Rann of Kutch Wildlife View">
+  </div>
+  <div class="travel-details">
+    <h2>Rann of Kutch</h2>
+    <ul>
+      <li><b>Best Time:</b> Nov – Feb</li>
+      <li><b>Budget:</b> ₹18,000 – ₹35,000</li>
+      <li><b>Visiting Places:</b> White Desert, Kutch Museum, Mandvi Beach</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 17 – Darjeeling -->
+<div class="travel-card" data-category="nature,heritage">
+  <div class="travel-images">
+    <img src="assets/images/darjeeling1.jpeg" alt="Darjeeling Mountain View">
+    <img src="assets/images/darjeeling2.jpeg" alt="Darjeeling Tea Garden View">
+  </div>
+  <div class="travel-details">
+    <h2>Darjeeling</h2>
+    <ul>
+      <li><b>Best Time:</b> Mar – Jun</li>
+      <li><b>Budget:</b> ₹12,000 – ₹25,000</li>
+      <li><b>Visiting Places:</b> Tiger Hill, Batasia Loop, Peace Pagoda</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 18 – Jaisalmer -->
+<div class="travel-card" data-category="heritage,desert">
+  <div class="travel-images">
+    <img src="assets/images/jaisalmer1.jpeg" alt="Jaisalmer Fort View">
+    <img src="assets/images/jaisalmer2.jpeg" alt="Jaisalmer Desert View">
+  </div>
+  <div class="travel-details">
+    <h2>Jaisalmer</h2>
+    <ul>
+      <li><b>Best Time:</b> Oct – Mar</li>
+      <li><b>Budget:</b> ₹15,000 – ₹30,000</li>
+      <li><b>Visiting Places:</b> Golden Fort, Sam Sand Dunes, Patwon Ki Haveli</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 19 – Shimla -->
+<div class="travel-card" data-category="heritage,nature">
+  <div class="travel-images">
+    <img src="assets/images/shimla1.jpeg" alt="Shimla Mountain View">
+    <img src="assets/images/shimla2.jpeg" alt="Shimla Heritage Building">
+  </div>
+  <div class="travel-details">
+    <h2>Shimla</h2>
+    <ul>
+      <li><b>Best Time:</b> Mar – Jun</li>
+      <li><b>Budget:</b> ₹12,000 – ₹25,000</li>
+      <li><b>Visiting Places:</b> Mall Road, Jakhoo Temple, Kufri</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 20 – Kochi -->
+<div class="travel-card" data-category="beach,culture">
+  <div class="travel-images">
+    <img src="assets/images/kochi1.jpeg" alt="Kochi Beach View">
+    <img src="assets/images/kochi2.jpeg" alt="Kochi Heritage Building">
+  </div>
+  <div class="travel-details">
+    <h2>Kochi</h2>
+    <ul>
+      <li><b>Best Time:</b> Sep – Feb</li>
+      <li><b>Budget:</b> ₹15,000 – ₹30,000</li>
+      <li><b>Visiting Places:</b> Fort Kochi, Chinese Fishing Nets, Mattancherry Palace</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 21 – Mahabalipuram -->
+<div class="travel-card" data-category="heritage,beach">
+  <div class="travel-images">
+    <img src="assets/images/mahabalipuram1.jpeg" alt="Mahabalipuram Heritage View">
+    <img src="assets/images/mahabalipuram2.jpeg" alt="Mahabalipuram Beach View">
+  </div>
+  <div class="travel-details">
+    <h2>Mahabalipuram</h2>
+    <ul>
+      <li><b>Best Time:</b> Oct – Mar</li>
+      <li><b>Budget:</b> ₹12,000 – ₹25,000</li>
+      <li><b>Visiting Places:</b> Shore Temple, Five Rathas, Krishna’s Butterball</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 22 – Andheri Hills -->
+<div class="travel-card" data-category="nature">
+  <div class="travel-images">
+    <img src="assets/images/Andheri Hills1.jpeg" alt="Andheri Hills View">
+    <img src="assets/images/Andheri Hills2.jpeg" alt="Andheri Hills Nature Walk">
+  </div>
+  <div class="travel-details">
+    <h2>Andheri Hills</h2>
+    <ul>
+      <li><b>Best Time:</b> Nov – Feb</li>
+      <li><b>Budget:</b> ₹8,000 – ₹18,000</li>
+      <li><b>Visiting Places:</b> Hilltop View, Nature Walk, Sunset Spot</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 23 – Khajuraho -->
+<div class="travel-card" data-category="heritage,culture">
+  <div class="travel-images">
+    <img src="assets/images/khajuraho1.jpeg" alt="Khajuraho Heritage View">
+    <img src="assets/images/khajuraho2.jpeg" alt="Khajuraho Temple View">
+  </div>
+  <div class="travel-details">
+    <h2>Khajuraho</h2>
+    <ul>
+      <li><b>Best Time:</b> Oct – Mar</li>
+      <li><b>Budget:</b> ₹12,000 – ₹25,000</li>
+      <li><b>Visiting Places:</b> Western Temples, Chitragupta, Kandariya Mahadev</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 24 – Ooty -->
+<div class="travel-card" data-category="nature,heritage">
+  <div class="travel-images">
+    <img src="assets/images/ooty1.jpeg" alt="Ooty Mountain View">
+    <img src="assets/images/ooty2.jpeg" alt="Ooty Lake View">
+  </div>
+  <div class="travel-details">
+    <h2>Ooty</h2>
+    <ul>
+      <li><b>Best Time:</b> Mar – Jun</li>
+      <li><b>Budget:</b> ₹12,000 – ₹25,000</li>
+      <li><b>Visiting Places:</b> Ooty Lake, Botanical Gardens, Doddabetta Peak</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 25 – Mysore -->
+<div class="travel-card" data-category="heritage,culture">
+  <div class="travel-images">
+    <img src="assets/images/mysore1.jpeg" alt="Mysore Palace View">
+    <img src="assets/images/mysore2.jpeg" alt="Mysore Heritage Building">
+  </div>
+  <div class="travel-details">
+    <h2>Mysore</h2>
+    <ul>
+      <li><b>Best Time:</b> Oct – Mar</li>
+      <li><b>Budget:</b> ₹12,000 – ₹25,000</li>
+      <li><b>Visiting Places:</b> Mysore Palace, Chamundi Hill, Brindavan Gardens</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 26 – Puri -->
+<div class="travel-card" data-category="beach,culture">
+  <div class="travel-images">
+    <img src="assets/images/puri1.jpeg" alt="Puri Beach View">
+    <img src="assets/images/puri2.jpeg" alt="Puri Temple View">
+  </div>
+  <div class="travel-details">
+    <h2>Puri</h2>
+    <ul>
+      <li><b>Best Time:</b> Oct – Feb</li>
+      <li><b>Budget:</b> ₹10,000 – ₹20,000</li>
+      <li><b>Visiting Places:</b> Jagannath Temple, Puri Beach, Chilika Lake</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 27 – Rann of Sambhar -->
+<div class="travel-card" data-category="nature,heritage">
+  <div class="travel-images">
+    <img src="assets/images/Rann of Sambhar1.jpeg" alt="Rann of Sambhar View">
+    <img src="assets/images/Rann of Sambhar2.jpeg" alt="Rann of Sambhar Wildlife Spot">
+  </div>
+  <div class="travel-details">
+    <h2>Rann of Sambhar</h2>
+    <ul>
+      <li><b>Best Time:</b> Nov – Feb</li>
+      <li><b>Budget:</b> ₹15,000 – ₹30,000</li>
+      <li><b>Visiting Places:</b> Salt Lake, Wildlife Spotting, Sunset Views</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 28 – Sikkim -->
+<div class="travel-card" data-category="nature,heritage,culture">
+  <div class="travel-images">
+    <img src="assets/images/sikkim1.jpeg" alt="Sikkim Mountain View">
+    <img src="assets/images/sikkim2.jpeg" alt="Sikkim Valley View">
+  </div>
+  <div class="travel-details">
+    <h2>Sikkim</h2>
+    <ul>
+      <li><b>Best Time:</b> Mar – Jun</li>
+      <li><b>Budget:</b> ₹15,000 – ₹30,000</li>
+      <li><b>Visiting Places:</b> Gangtok, Tsomgo Lake, Rumtek Monastery</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 29 – Varkala -->
+<div class="travel-card" data-category="beach,nature">
+  <div class="travel-images">
+    <img src="assets/images/varkala1.jpeg" alt="Varkala Beach View">
+    <img src="assets/images/varkala2.jpeg" alt="Varkala Cliff View">
+  </div>
+  <div class="travel-details">
+    <h2>Varkala</h2>
+    <ul>
+      <li><b>Best Time:</b> Sep – Feb</li>
+      <li><b>Budget:</b> ₹12,000 – ₹25,000</li>
+      <li><b>Visiting Places:</b> Papanasam Beach, Janardana Swami Temple, Cliff Views</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 30 – Khajjiar -->
+<div class="travel-card" data-category="nature,heritage">
+  <div class="travel-images">
+    <img src="assets/images/khajjiar1.jpeg" alt="Khajjiar Lake View">
+    <img src="assets/images/khajjiar2.jpeg" alt="Khajjiar Mini Switzerland View">
+  </div>
+  <div class="travel-details">
+    <h2>Khajjiar</h2>
+    <ul>
+      <li><b>Best Time:</b> Mar – Jun</li>
+      <li><b>Budget:</b> ₹12,000 – ₹25,000</li>
+      <li><b>Visiting Places:</b> Khajjiar Lake, Mini Switzerland, Trekking Spots</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 31 – Delhi -->
+<div class="travel-card" data-category="city,heritage,culture">
+  <div class="travel-images">
+    <img src="assets/images/delhi1.jpeg" alt="Delhi Heritage View">
+    <img src="assets/images/delhi2.jpeg" alt="Delhi City View">
+  </div>
+  <div class="travel-details">
+    <h2>Delhi</h2>
+    <ul>
+      <li><b>Best Time:</b> Oct – Mar</li>
+      <li><b>Budget:</b> ₹12,000 – ₹30,000</li>
+      <li><b>Visiting Places:</b> India Gate, Red Fort, Qutub Minar</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 32 – Jaipur (Alt) -->
+<div class="travel-card" data-category="city,heritage">
+  <div class="travel-images">
+    <img src="assets/images/jaipur1.jpeg" alt="Jaipur Heritage View">
+    <img src="assets/images/jaipur2.jpeg" alt="Jaipur City View">
+  </div>
+  <div class="travel-details">
+    <h2>Jaipur</h2>
+    <ul>
+      <li><b>Best Time:</b> Oct – Mar</li>
+      <li><b>Budget:</b> ₹10,000 – ₹25,000</li>
+      <li><b>Visiting Places:</b> Hawa Mahal, City Palace, Jantar Mantar</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 33 – Mumbai (Alt) -->
+<div class="travel-card" data-category="city,beach,culture">
+  <div class="travel-images">
+    <img src="assets/images/mumbai1.jpeg" alt="Mumbai City View">
+    <img src="assets/images/mumbai2.jpeg" alt="Mumbai Gateway of India View">
+  </div>
+  <div class="travel-details">
+    <h2>Mumbai</h2>
+    <ul>
+      <li><b>Best Time:</b> Nov – Feb</li>
+      <li><b>Budget:</b> ₹15,000 – ₹35,000</li>
+      <li><b>Visiting Places:</b> Gateway of India, Marine Drive, Colaba</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 34 – Kolkata -->
+<div class="travel-card" data-category="city,culture,heritage">
+  <div class="travel-images">
+    <img src="assets/images/kolkata1.jpeg" alt="Kolkata Heritage View">
+    <img src="assets/images/kolkata2.jpeg" alt="Kolkata City View">
+  </div>
+  <div class="travel-details">
+    <h2>Kolkata</h2>
+    <ul>
+      <li><b>Best Time:</b> Oct – Mar</li>
+      <li><b>Budget:</b> ₹10,000 – ₹22,000</li>
+      <li><b>Visiting Places:</b> Victoria Memorial, Howrah Bridge, Dakshineswar Kali Temple</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 35 – Chennai -->
+<div class="travel-card" data-category="city,beach,culture">
+  <div class="travel-images">
+    <img src="assets/images/chennai1.jpeg" alt="Chennai Beach View">
+    <img src="assets/images/chennai2.jpeg" alt="Chennai City View">
+  </div>
+  <div class="travel-details">
+    <h2>Chennai</h2>
+    <ul>
+      <li><b>Best Time:</b> Nov – Feb</li>
+      <li><b>Budget:</b> ₹12,000 – ₹28,000</li>
+      <li><b>Visiting Places:</b> Marina Beach, Fort St. George, Kapaleeshwarar Temple</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 36 – Bengaluru -->
+<div class="travel-card" data-category="city,nature">
+  <div class="travel-images">
+    <img src="assets/images/bengaluru1.jpeg" alt="Bengaluru Nature View">
+    <img src="assets/images/bengaluru2.jpeg" alt="Bengaluru City View">
+  </div>
+  <div class="travel-details">
+    <h2>Bengaluru</h2>
+    <ul>
+      <li><b>Best Time:</b> Oct – Mar</li>
+      <li><b>Budget:</b> ₹12,000 – ₹30,000</li>
+      <li><b>Visiting Places:</b> Lalbagh, Cubbon Park, Vidhana Soudha</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 37 – Pune -->
+<div class="travel-card" data-category="city,culture">
+  <div class="travel-images">
+    <img src="assets/images/pune1.jpeg" alt="Pune Heritage View">
+    <img src="assets/images/pune2.jpeg" alt="Pune City View">
+  </div>
+  <div class="travel-details">
+    <h2>Pune</h2>
+    <ul>
+      <li><b>Best Time:</b> Oct – Feb</li>
+      <li><b>Budget:</b> ₹10,000 – ₹22,000</li>
+      <li><b>Visiting Places:</b> Shaniwar Wada, Aga Khan Palace, Osho Ashram</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 38 – Hyderabad -->
+<div class="travel-card" data-category="city,heritage,culture">
+  <div class="travel-images">
+    <img src="assets/images/hyderabad1.jpeg" alt="Hyderabad Heritage View">
+    <img src="assets/images/hyderabad2.jpeg" alt="Hyderabad City View">
+  </div>
+  <div class="travel-details">
+    <h2>Hyderabad</h2>
+    <ul>
+      <li><b>Best Time:</b> Oct – Feb</li>
+      <li><b>Budget:</b> ₹12,000 – ₹28,000</li>
+      <li><b>Visiting Places:</b> Charminar, Golconda Fort, Ramoji Film City</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 39 – Lucknow -->
+<div class="travel-card" data-category="city,heritage,culture">
+  <div class="travel-images">
+    <img src="assets/images/lucknow1.jpeg" alt="Lucknow Heritage View">
+    <img src="assets/images/lucknow2.jpeg" alt="Lucknow City View">
+  </div>
+  <div class="travel-details">
+    <h2>Lucknow</h2>
+    <ul>
+      <li><b>Best Time:</b> Oct – Mar</li>
+      <li><b>Budget:</b> ₹10,000 – ₹22,000</li>
+      <li><b>Visiting Places:</b> Bara Imambara, Rumi Darwaza, Chota Imambara</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+
+<!-- CARD 40 – Ahmedabad -->
+<div class="travel-card" data-category="city,heritage,culture">
+  <div class="travel-images">
+    <img src="assets/images/ahmedabad1.jpeg" alt="Ahmedabad Heritage View">
+    <img src="assets/images/ahmedabad2.jpeg" alt="Ahmedabad City View">
+  </div>
+  <div class="travel-details">
+    <h2>Ahmedabad</h2>
+    <ul>
+      <li><b>Best Time:</b> Oct – Feb</li>
+      <li><b>Budget:</b> ₹12,000 – ₹28,000</li>
+      <li><b>Visiting Places:</b> Sabarmati Ashram, Kankaria Lake, Adalaj Stepwell</li>
+    </ul>
+    <button type="button" class="plan-trip-btn">Plan Trip</button>
+  </div>
+</div>
+    
+  </section>
+
+
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+
+<footer class="main-footer">
+        <div class="footer-container">
+
+            <!-- Brand -->
+            <div class="footer-box">
+                <h2>GoYatra AI</h2>
+                <p>
+                    GenAI powered travel planning platform helping users
+                    plan smart, budget-friendly & personalized trips.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#bookingForm">Plan Trip</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="mytrips.html">My Trips</a></li>
+                </ul>
+            </div>
+
+            <!-- Features -->
+            <div class="footer-box">
+                <h3>Features</h3>
+                <ul>
+                    <li>AI Trip Planner</li>
+                    <li>Budget Estimator</li>
+                    <li>Smart Suggestions</li>
+
+                </ul>
+
+
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-box">
+                <h3>Contact</h3>
+                <p>India</p>
+                <p>support@goyatra.ai</p>
+                <p>+91 XXXXXXXX</p>
+
+                <div class="social-icons">
+                    <a href="#"><img src="assets/icons/mail.png" alt="Gmail"></a>
+                    <a href="#"><img src="assets/icons/x.png" alt="twitter"></a>
+                    <a href="#"><img src="assets/icons/whatsapp.png" alt="whatsapp"></a>
+                    <a href="#"><img src="assets/icons/instagram.png" alt="insta"></a>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            TRAVELING PLANNING PLATFORM | Final Year Project | Mr. Akhilesh Bhagat | Mr. Sarvesh Tak | Mr. Ghanshyam
+            Lihankar
+        </div>
+    </footer>
+
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/session.js"></script>
+  <script src="assets/js/destination.js"></script>
+     <script src="assets/js/index.js"></script>
+
+</body>
+
+</html>

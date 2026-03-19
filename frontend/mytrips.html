@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Trips - GoYatra</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body data-page="trips">
+
+  <!-- ============================================
+       HEADER & NAVIGATION
+       ============================================ -->
+      <header id="siteHeader">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon">TRAVELING PLANNING PLATFORM</span>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="nav-toggle" id="navToggleBtn" type="button" aria-label="Menu" aria-expanded="false">
+                <img src="assets/icons/menu1.png" alt="menu" class="menu-icon">
+
+            </button>
+
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#bookingForm">Plan Trip</a></li>
+
+                    <li><a href="mytrips.html">My Trips</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+
+                    <li class="nav-user">
+                        <button class="user-btn" id="userMenuBtn" type="button" aria-expanded="false">
+                            <img src="assets/GIF/profile.gif" alt="User" class="user-icon">
+                            <span>User</span>
+                        </button>
+
+                        <div class="user-dropdown" id="userDropdown">
+                            <a href="user.html">LogOut</a>
+                            <!-- <button type="button" id="logoutBtn">Logout</button>
+                            <button type="button" id="deleteAccountBtn" style="display:none;">Delete Account</button> -->
+
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+  <!-- ============================================
+       HERO SECTION
+       ============================================ -->
+  <section class="hero">
+    <div class="container">
+      <h1>
+        Your Saved Trips -
+        <span class="highlight-green"> My Trips</span>
+      </h1>
+      <p>All trips you planned and saved will appear here</p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       TRIPS GRID (DYNAMIC)
+       ============================================ -->
+  <section class="mytrips-section">
+    <div class="container">
+      <div id="myTripsStatus" class="mytrips-status">Loading trips...</div>
+      <div id="main" class="mytrips-grid">
+      </div>
+      <div class="plan-trip-wrapper">
+        <a href="index.html#bookingForm" class="plan-trip-btn">Plan New Trip</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+ 
+<footer class="main-footer">
+        <div class="footer-container">
+
+            <!-- Brand -->
+            <div class="footer-box">
+                <h2>GoYatra AI</h2>
+                <p>
+                    GenAI powered travel planning platform helping users
+                    plan smart, budget-friendly & personalized trips.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#bookingForm">Plan Trip</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="mytrips.html">My Trips</a></li>
+                </ul>
+            </div>
+
+            <!-- Features -->
+            <div class="footer-box">
+                <h3>Features</h3>
+                <ul>
+                    <li>AI Trip Planner</li>
+                    <li>Budget Estimator</li>
+                    <li>Smart Suggestions</li>
+
+                </ul>
+
+
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-box">
+                <h3>Contact</h3>
+                <p>India</p>
+                <p>support@goyatra.ai</p>
+                <p>+91 XXXXXXXX</p>
+
+                <div class="social-icons">
+                    <a href="#"><img src="assets/icons/mail.png" alt="Gmail"></a>
+                    <a href="#"><img src="assets/icons/x.png" alt="twitter"></a>
+                    <a href="#"><img src="assets/icons/whatsapp.png" alt="whatsapp"></a>
+                    <a href="#"><img src="assets/icons/instagram.png" alt="insta"></a>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            TRAVELING PLANNING PLATFORM | Final Year Project | Mr. Akhilesh Bhagat | Mr. Sarvesh Tak | Mr. Ghanshyam
+            Lihankar
+        </div>
+    </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/session.js"></script>
+  <script src="assets/js/mytrips.js"></script>
+     <script src="assets/js/index.js"></script>
+
+
+
+     
+
+</body>
+
+</html>
