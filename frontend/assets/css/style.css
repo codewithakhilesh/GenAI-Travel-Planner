@@ -3746,3 +3746,712 @@ body[data-page="auth"] {
     height: 50px;
   }
 }
+
+/* Responsive fix */
+img,
+video,
+iframe,
+embed,
+object {
+  max-width: 100%;
+}
+
+/* Video responsive fix */
+video,
+iframe,
+embed,
+object {
+  display: block;
+}
+
+.hero video,
+.banner-slider video,
+.banner-slides video,
+.slide video,
+.travel-images video,
+.trip-left video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.search-form > *,
+.banner-wrapper > *,
+.international-container > *,
+.travel-card > *,
+.trip-split > *,
+.footer-container > *,
+#main > * {
+  min-width: 0;
+}
+
+/* Conflict fix */
+header,
+#siteHeader {
+  isolation: isolate;
+}
+
+header .nav-user #userDropdown,
+header .nav-user .user-dropdown {
+  left: auto !important;
+  max-width: min(220px, calc(100vw - 24px));
+}
+
+header .nav-user #userDropdown.active,
+header .nav-user .user-dropdown.active {
+  display: flex !important;
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+  pointer-events: auto !important;
+}
+
+/* Tablet adjustment */
+@media (max-width: 1440px) {
+  .banner-wrapper {
+    gap: 24px;
+  }
+
+  .banner-slider {
+    width: auto;
+    max-width: 800px;
+    min-width: 0;
+    flex: 1 1 0;
+  }
+
+  .banner-text {
+    flex: 0 1 520px;
+  }
+}
+
+/* Tablet adjustment */
+@media (max-width: 1180px) {
+  .banner-wrapper {
+    flex-wrap: wrap;
+  }
+
+  .banner-slider {
+    width: min(100%, 720px);
+    max-width: 100%;
+    flex: 1 1 620px;
+  }
+
+  .banner-text {
+    max-width: 100%;
+    flex: 1 1 320px;
+  }
+}
+
+/* Tablet adjustment */
+@media (max-width: 1200px) {
+  .search-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    padding: 0 !important;
+  }
+
+  .swap-box {
+    display: none !important;
+  }
+
+  .search-form .form-group {
+    border-right: none !important;
+  }
+
+  .budget-box {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+  }
+
+  .select-dropdown {
+    min-width: 100%;
+  }
+}
+
+/* Tablet adjustment */
+@media (max-width: 1024px) {
+  .header-container {
+    padding-left: 24px;
+  }
+
+  .logo-icon {
+    font-size: 18px;
+    letter-spacing: 3px;
+  }
+
+  .hero h1,
+  .banner-heading,
+  .banner-heading span,
+  .international-text h2,
+  .goyatra-benefits .benefits-title,
+  .inspire-title {
+    font-size: 42px;
+  }
+
+  .international-container {
+    grid-template-columns: 1fr !important;
+    column-gap: 0 !important;
+    row-gap: 2.5rem;
+  }
+
+  .international-stack {
+    width: min(100%, 420px);
+    margin-left: 0;
+    justify-self: center;
+  }
+
+  .trip-split {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .trip-left {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .trip-right {
+    height: auto;
+    min-height: 0;
+  }
+
+  .trip-details-scroll {
+    overflow: visible;
+    padding-right: 0;
+  }
+
+  .travel-sections {
+    gap: 60px;
+    padding: 64px 6%;
+  }
+
+  .travel-card,
+  .travel-card.reverse {
+    gap: 32px;
+  }
+
+  .travel-details h2 {
+    font-size: 36px;
+  }
+
+  .hotel-carousel {
+    padding-inline: 52px;
+  }
+
+  .hotel-prev {
+    left: 0;
+  }
+
+  .hotel-next {
+    right: 0;
+  }
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  section {
+    padding: 2.5rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  header {
+    height: auto;
+    min-height: 70px;
+  }
+
+  .header-container {
+    height: auto;
+    min-height: 70px;
+    padding: 12px 16px !important;
+    padding-left: 16px !important;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .logo-icon {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+
+  header nav {
+    position: static;
+    inset: auto;
+    width: 100%;
+    order: 3;
+    margin-top: 4px;
+    padding: 0;
+    display: block;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  header .nav-toggle ~ nav {
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    top: calc(100% + 10px);
+    width: auto;
+    order: initial;
+    margin-top: 0;
+    padding: 10px;
+    display: none;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(15, 23, 42, 0.10);
+    border-radius: 16px;
+    box-shadow: 0 18px 45px rgba(2, 6, 23, 0.18);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    z-index: 2500;
+  }
+
+  header.menu-open .nav-toggle ~ nav {
+    display: block;
+  }
+
+  header nav ul {
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    padding: 0;
+  }
+
+  header .nav-toggle ~ nav ul {
+    flex-direction: column;
+    gap: 6px;
+    padding: 6px;
+  }
+
+  header nav a {
+    display: block;
+    padding: 8px 0;
+    letter-spacing: 2px;
+    font-size: 12px;
+  }
+
+  header .nav-toggle ~ nav a {
+    padding: 10px 12px;
+  }
+
+  .user-btn span {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+
+  .nav-user {
+    width: 100%;
+  }
+
+  .nav-user .user-btn {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  header nav .nav-user #userDropdown,
+  header nav .nav-user .user-dropdown {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 8px !important;
+  }
+
+  .hero h1,
+  .banner-heading,
+  .banner-heading span,
+  .international-text h2,
+  .goyatra-benefits .benefits-title,
+  .inspire-title {
+    font-size: 34px;
+  }
+
+  .subtitle,
+  .hero .subtitle,
+  .banner-subtitle,
+  .international-text p {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .search-box h2 {
+    font-size: 22px !important;
+    padding: 12px 14px !important;
+  }
+
+  .search-form {
+    grid-template-columns: 1fr !important;
+  }
+
+  .search-form .form-group {
+    padding: 14px !important;
+  }
+
+  .search-form input,
+  .search-form select {
+    font-size: 16px !important;
+    padding-right: 32px !important;
+  }
+
+  .select-head {
+    padding: 10px 34px 10px 10px;
+  }
+
+  .select-dropdown {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .search-actions {
+    justify-content: stretch !important;
+    flex-direction: column !important;
+    padding: 12px 14px 16px !important;
+  }
+
+  .search-actions .btn {
+    width: 100% !important;
+  }
+
+  .banner-slider,
+  .banner-slides,
+  .slide {
+    height: 340px;
+  }
+
+  .slide-title {
+    left: 20px;
+    bottom: 20px;
+    font-size: 1.85rem;
+    letter-spacing: 2px;
+  }
+
+  .international-stack {
+    height: clamp(360px, 70vw, 520px);
+  }
+
+  .travel-card,
+  .travel-card.reverse {
+    flex-direction: column !important;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .travel-images {
+    width: 100%;
+    height: clamp(240px, 58vw, 330px);
+  }
+
+  .travel-details h2 {
+    font-size: 32px;
+    margin-bottom: 14px;
+  }
+
+  .travel-details li {
+    font-size: 16px;
+  }
+
+  .travel-details button,
+  .download-wrap .btn {
+    width: 100%;
+  }
+
+  .hotel-carousel {
+    padding-inline: 44px;
+  }
+
+  .hotel-nav {
+    width: 40px;
+    height: 40px;
+  }
+
+  .footer-container {
+    gap: 24px;
+  }
+
+  .social-icons {
+    flex-wrap: wrap;
+  }
+
+  .login-card {
+    max-width: 100%;
+  }
+}
+
+/* Mobile adjustment */
+@media (max-width: 575px) {
+  .destination-filter {
+    padding: 28px 5%;
+  }
+
+  .filter-row {
+    gap: 14px;
+  }
+
+  .filter-link {
+    font-size: 16px;
+  }
+
+  .hero h1,
+  .banner-heading,
+  .banner-heading span,
+  .international-text h2,
+  .goyatra-benefits .benefits-title,
+  .inspire-title {
+    font-size: 30px;
+  }
+
+  .subtitle,
+  .hero .subtitle,
+  .banner-subtitle,
+  .international-text p,
+  .inspire-text {
+    font-size: 16px;
+  }
+
+  .travel-sections {
+    padding: 48px 5%;
+    gap: 48px;
+  }
+
+  .banner-slider,
+  .banner-slides,
+  .slide {
+    height: 280px;
+  }
+
+  .slide-title {
+    left: 16px;
+    bottom: 16px;
+    font-size: 1.5rem;
+  }
+
+  .trip-heading {
+    font-size: 1.2rem;
+  }
+
+  .tp-block {
+    padding: 12px;
+  }
+
+  .hotel-carousel {
+    padding-inline: 40px;
+  }
+
+  .card-actions {
+    flex-direction: column;
+  }
+
+  #main {
+    padding: 0;
+  }
+
+  #main .card {
+    height: auto;
+    min-height: 320px;
+  }
+}
+
+/* Small mobile adjustment */
+@media (max-width: 425px) {
+  .container {
+    padding: 0 0.875rem;
+  }
+
+  .logo {
+    max-width: calc(100% - 56px);
+  }
+
+  .logo-icon {
+    font-size: 12px;
+    letter-spacing: 1px;
+    white-space: normal;
+    line-height: 1.1;
+  }
+
+  .hero h1,
+  .banner-heading,
+  .banner-heading span,
+  .international-text h2,
+  .goyatra-benefits .benefits-title,
+  .inspire-title,
+  .travel-details h2 {
+    font-size: 28px;
+  }
+
+  .search-box h2 {
+    font-size: 20px !important;
+  }
+
+  .search-form label {
+    letter-spacing: 1.2px !important;
+    font-size: 10px !important;
+  }
+
+  .search-form input,
+  .search-form select {
+    font-size: 15px !important;
+  }
+
+  .search-form .custom-select .select-head,
+  .search-form .custom-select .select-item,
+  .search-actions .btn-primary,
+  .search-actions .btn-secondary {
+    letter-spacing: 1.5px !important;
+  }
+
+  .search-actions {
+    padding: 12px !important;
+  }
+
+  .banner-slider,
+  .banner-slides,
+  .slide {
+    height: 240px;
+  }
+
+  .slide-title {
+    left: 14px;
+    bottom: 14px;
+    font-size: 1.2rem;
+    letter-spacing: 1.5px;
+  }
+
+  .international-stack {
+    height: clamp(300px, 82vw, 380px);
+  }
+
+  .stack-close {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+
+  .travel-details button,
+  .plan-trip-wrapper .plan-trip-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .gif-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .hotel-carousel {
+    padding-inline: 34px;
+  }
+
+  .hotel-nav {
+    width: 36px;
+    height: 36px;
+  }
+
+  .footer-box h2 {
+    font-size: 24px;
+  }
+
+  .footer-box h3 {
+    font-size: 16px;
+  }
+}
+
+/* Small mobile adjustment */
+@media (max-width: 375px) {
+  .hero h1,
+  .banner-heading,
+  .banner-heading span,
+  .international-text h2,
+  .goyatra-benefits .benefits-title,
+  .inspire-title,
+  .travel-details h2 {
+    font-size: 26px;
+  }
+
+  .banner-slider,
+  .banner-slides,
+  .slide {
+    height: 220px;
+  }
+
+  .international-stack {
+    height: clamp(280px, 84vw, 340px);
+  }
+}
+
+/* Small mobile adjustment */
+@media (max-width: 320px) {
+  .header-container {
+    padding: 10px 12px !important;
+    padding-left: 12px !important;
+  }
+
+  .logo {
+    max-width: calc(100% - 48px);
+  }
+
+  .logo-icon {
+    font-size: 10.5px;
+    letter-spacing: 0.4px;
+  }
+
+  .hero h1,
+  .banner-heading,
+  .banner-heading span,
+  .international-text h2,
+  .goyatra-benefits .benefits-title,
+  .inspire-title,
+  .travel-details h2 {
+    font-size: 24px;
+  }
+
+  .search-box h2 {
+    font-size: 18px !important;
+  }
+
+  .search-form .form-group {
+    padding: 12px !important;
+  }
+
+  .search-form input,
+  .search-form select {
+    font-size: 14px !important;
+  }
+
+  .search-actions .btn-primary,
+  .search-actions .btn-secondary {
+    padding: 0.75rem 0.875rem;
+    letter-spacing: 1.2px !important;
+  }
+
+  .banner-slider,
+  .banner-slides,
+  .slide {
+    height: 200px;
+  }
+
+  .slide-title {
+    font-size: 1.05rem;
+  }
+
+  .international-stack {
+    height: 270px;
+  }
+
+  .hotel-carousel {
+    padding-inline: 30px;
+  }
+
+  .hotel-nav {
+    width: 34px;
+    height: 34px;
+  }
+}
